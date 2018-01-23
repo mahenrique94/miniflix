@@ -7,7 +7,7 @@ export default class Header extends Component {
 
     render() {
         return(
-            <header class="c-header">
+            <header className="c-header">
                 <Menu/>
             </header>
         );
