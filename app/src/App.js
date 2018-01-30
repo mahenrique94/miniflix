@@ -9,9 +9,9 @@ export default class App extends Component {
         return (
             <div>
                 <Header/>
-                <div className="o-container">
+                <main>
                     { this.props.children }
-                </div>
+                </main>
             </div>
         );
     }

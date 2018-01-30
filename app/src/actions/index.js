@@ -1,15 +1,15 @@
-import * as Types from "../constants";
+import * as ActionTypes from "../constants/ActionTypes";
 
 export function error(error) {
     return {
-        type : Types.ERROR,
+        type : ActionTypes.ERROR,
         payload : { error }
     }
 }
 
 export function isLoading(loading) {
     return {
-        type : Types.IS_LOADING,
+        type : ActionTypes.IS_LOADING,
         payload : {
             loading : false
         }
@@ -18,7 +18,7 @@ export function isLoading(loading) {
 
 export function success(data) {
     return {
-        type : Types.SUCCESS,
+        type : ActionTypes.SUCCESS,
         payload : { data }
     }
 }

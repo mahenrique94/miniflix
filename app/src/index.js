@@ -6,7 +6,7 @@ import { Router, Route } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 import store, { history } from "./store";
 
-import Home from './components/app/home/Home';
+import Home from './containers/home/Home';
 
 import "./assets/css/normalize.css";
 import "./assets/css/fontawesome/css/fontawesome-all.min.css";

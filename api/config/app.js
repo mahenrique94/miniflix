@@ -25,7 +25,7 @@ module.exports = () => {
 
     api.use(express.static(path.resolve("./app/dist")));
 
-    api.use(cors({origin : process.env.apiHost || `http://localhost:${api.get("app_port")}`, credentials : true}));
+    api.use(cors({origin : process.env.apiHost || "http://localhost:8080", credentials : true}));
 
     api.use(methodOverride());
 
