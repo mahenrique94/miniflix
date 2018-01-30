@@ -2,9 +2,10 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { routerMiddleware } from "react-router-redux";
 import thunk from "redux-thunk";
 import createHistory from "history/createBrowserHistory";
+
 import reducers from "./reducers";
 
-export const history = createHistory();
+export const history = createHistory({ basename : "miniflix"});
 
 const initialState = {};
 const enhancers = [];

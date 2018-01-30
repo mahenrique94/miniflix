@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
 
-import Header from "./components/app/header/Header";
+import Header from "../../components/panel/header/Header";
 
-export default class App extends Component {
+export default class Panel extends Component {
 
     render() {
-        return (
+        return(
             <div>
                 <Header/>
                 <main>
