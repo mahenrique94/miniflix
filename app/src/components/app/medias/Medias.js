@@ -14,7 +14,7 @@ class Medias extends Component {
     render() {
         return(
             <div className="o-container">
-                { this.props.medias.map(media => <Media title={ media.title } slug={ media.slug }/>) }
+                { this.props.medias.map(media => <Media key={ media._id } title={ media.title } describe={ media.describe } slug={ media.slug }/>) }
             </div>
         );
     }

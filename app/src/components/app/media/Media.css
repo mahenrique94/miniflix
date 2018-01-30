@@ -5,8 +5,8 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
     margin-bottom: 3rem;
     margin-right: 1.5rem;
-    max-width: calc(33.33% - 18px);
     transition: all .15s linear;
+    width: calc(33.33% - 18px);
 }
 .c-media:nth-child(3n) {
     margin-right: 0;
