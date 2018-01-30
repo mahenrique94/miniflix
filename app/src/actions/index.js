@@ -1,15 +1,15 @@
-import { ERROR, IS_LOADING, SUCCESS } from "../constants";
+import * as Types from "../constants";
 
 export function error(error) {
     return {
-        type : ERROR,
+        type : Types.ERROR,
         payload : { error }
     }
 }
 
 export function isLoading(loading) {
     return {
-        type : IS_LOADING,
+        type : Types.IS_LOADING,
         payload : {
             loading : false
         }
@@ -18,7 +18,7 @@ export function isLoading(loading) {
 
 export function success(data) {
     return {
-        type : SUCCESS,
+        type : Types.SUCCESS,
         payload : { data }
     }
 }

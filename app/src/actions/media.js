@@ -14,6 +14,6 @@ export function list() {
             })
             .then(response => response.json())
             .then(medias => dispatch(success(medias)))
-            .catch(error => dispatch(error(error)));
+            .catch(err => dispatch(error(err)));
     }
 }
