@@ -2,23 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from "./components/header/Header";
-import Media from "./components/media/Media";
 
-class App extends Component {
+export default class App extends Component {
+
     render() {
         return (
-            <div className="o-app">
+            <div>
                 <Header/>
                 <div className="o-container">
-                    <Media/>
-                    <Media/>
-                    <Media/>
-                    <Media/>
-                    <Media/>
+                    { this.props.children }
                 </div>
             </div>
         );
     }
-}
 
-export default App;
+}

@@ -1,5 +1,6 @@
 const mongoSanitize = require("mongo-sanitize");
 const slug = require("slug");
+const fileHelper = require("../helpers/file")();
 
 module.exports = api => {
 
@@ -35,7 +36,16 @@ module.exports = api => {
         save : (req, res) => {
             req.body.slug = slug(req.body.title.toString().toLowerCase());
             model.create(req.body)
-                .then(media => res.json(media))
+                .then(media => {
+                    if (req.files) {
+                        req.files.forEach(file => {
+                            file.name = media.slug;
+                            file.type = "jpg";
+                            fileHelper.upload(file).catch(error => res.status(500).json(error));
+                        });
+                    }
+                    res.json(media);
+                })
                 .catch(error => {
                     console.error(error);
                     res.status(500).json(error);
