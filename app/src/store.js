@@ -3,7 +3,7 @@ import { routerMiddleware } from "react-router-redux";
 import thunk from "redux-thunk";
 import createHistory from "history/createBrowserHistory";
 
-import reducers from "./reducers";
+import reducers from "./reducers/base";
 
 export const history = createHistory({ basename : "miniflix"});
 

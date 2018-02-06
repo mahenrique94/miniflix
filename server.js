@@ -1,5 +1,5 @@
 const http = require("http");
-const app = require("./api/config/app")();
-require("./api/config/database")(app.get("app_name"));
+const api = require("./api/config/api")();
+require("./api/config/database")(api.get("api_name"));
 
-http.createServer(app).listen(app.get("app_port"), () => console.log(`[HTTP] => Server running at port: ${app.get("app_port")}`));
+http.createServer(api).listen(api.get("api_port"), () => console.log(`[HTTP] => API running at port: ${api.get("api_port")}`));

@@ -1,5 +1,5 @@
-const APP_NAME = "miniflix";
-const APP_DIRECTORY = "directory/";
+const API_NAME = "miniflix";
+const API_DIRECTORY = "directory/";
 const express = require("express");
 const consign = require("consign");
 const bodyParser = require("body-parser");
@@ -16,12 +16,12 @@ module.exports = () => {
 
     const api = express();
 
-    api.set("app_name", APP_NAME);
-    api.set("app_port", "3000");
-    api.set("app_secret", "chaves");
+    api.set("api_name", API_NAME);
+    api.set("api_port", "3000");
+    api.set("api_secret", "chaves");
     api.set("router", router);
 
-    api.use(multer({dest : APP_DIRECTORY}).any());
+    api.use(multer({dest : API_DIRECTORY}).any());
 
     api.use(express.static(path.resolve("./app/dist")));
 
@@ -35,7 +35,7 @@ module.exports = () => {
     api.use(helmet.xssFilter());
     api.use(helmet.noSniff());
 
-    api.use(`/${api.get("app_name")}`, prefix);
+    api.use(`/${api.get("api_name")}`, prefix);
     prefix.use("/api", router);
 
     api.disable("x-powered-by");

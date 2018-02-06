@@ -1,0 +1,33 @@
+.pl-navbar {
+    background: #F2F2F2;
+    color: #595959;
+    font-weight: bold;
+    padding: 1rem;
+}
+.pl-navbar__link {
+    border: 1px solid;
+    border-radius: 5px;
+    color: #FDFDFD;
+    display: inline-block;
+    font-weight: 100;
+    margin-right: .5rem;
+    padding: .5rem .75rem;
+}
+.pl-navbar__link--new {
+    background: #0099FF;
+    border-color: #0099FF;
+}
+.pl-navbar__link--new:hover {
+    background: #007ACC;
+}
+.pl-navbar__link--save {
+    background: #00CC99;
+    border-color: #00CC99;
+}
+.pl-navbar__link--save:hover {
+    background: #009973;
+}
+.pl-navbar__icon {
+    font-size: .8rem;
+    margin-right: .25rem;
+}

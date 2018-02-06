@@ -1,4 +1,4 @@
-import { error, isLoading, success } from "./index";
+import { error, isLoading, success } from "./base";
 
 export function list() {
     return dispatch => {
@@ -6,7 +6,7 @@ export function list() {
         fetch("http://localhost:3000/miniflix/api/medias")
             .then(response => {
                 if (!response.ok) {
-                    throw new Error("An error raised on getting medias from api");
+                    throw new Error("An error raised on getting medias from API");
                 }
 
                 dispatch(isLoading(false));
