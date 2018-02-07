@@ -20,13 +20,6 @@
 .pl-navbar__link--new:hover {
     background: #007ACC;
 }
-.pl-navbar__link--save {
-    background: #00CC99;
-    border-color: #00CC99;
-}
-.pl-navbar__link--save:hover {
-    background: #009973;
-}
 .pl-navbar__icon {
     font-size: .8rem;
     margin-right: .25rem;
