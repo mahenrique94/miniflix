@@ -19,12 +19,15 @@
     text-align: center;
     width: 180px;
 }
+.pl-table__body___row:nth-child(even) {
+    background: #F5F5F5;
+}
 .pl-table__body___column {
     font-weight: 100;
     padding: .5rem;
 }
 .pl-table__link {
-    border: 1px solid;
+    border: none;
     border-radius: 5px;
     color: #FDFDFD;
     display: inline-block;
@@ -34,6 +37,7 @@
 }
 .pl-table__link--edit {
     background: #FFD11A;
+    margin-right: .25rem;
 }
 .pl-table__link--edit:hover {
     background: #E6B800;

@@ -10,7 +10,7 @@ module.exports = api => {
         delete : (req, res) => {
             const _id = mongoSanitize(req.body._id);
             model.remove({_id}).exec()
-                .then(() => res.status(204).end())
+                .then(() => model.find().exec().then(medias => res.json(medias)))
                 .catch(error => {
                     console.error(error);
                     res.status(500).json(error);

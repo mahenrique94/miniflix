@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { list } from "../../../../actions/media";
+import { remove, list } from "../../../../actions/media";
 
 import NavBar from "../../nav_bar/NavBar";
 import Panel from "../../../../containers/panel/Panel";
@@ -38,7 +38,7 @@ const mapDispatchToProps = dispatch => {
 
     return {
         list : () => dispatch(list()),
-        delete: (id) => console.log("Deleting...")
+        delete: id => dispatch(remove(id))
     }
 
 }
