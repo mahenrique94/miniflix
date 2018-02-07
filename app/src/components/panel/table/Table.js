@@ -26,7 +26,7 @@ export default class Table extends Component {
                         <tr className="pl-table__body___row" key={ item._id }>
                             { this.props.columns.map(column => <td className="pl-table__body___column" key={ column }>{ item[column] }</td>) }
                             <td className="pl-table__body___column">
-                                <Link className="pl-table__link pl-table__link--edit" to={`/panel/${this.props.type}/edit/${item._id}`}><i className="fas fa-pencil-alt pl-table__icon"></i>Editar</Link>
+                                <Link className="pl-table__link pl-table__link--edit" to={`/panel/${this.props.type}/${item._id}`}><i className="fas fa-pencil-alt pl-table__icon"></i>Editar</Link>
                                 <Delete delete={ this.props.delete } id={ item._id }/>
                             </td>
                         </tr>
@@ -35,7 +35,7 @@ export default class Table extends Component {
                 </table>
             );
         }
-        return (<table></table>);
+        return <table></table>;
     }
 
 }

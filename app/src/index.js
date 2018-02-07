@@ -26,6 +26,7 @@ ReactDOM.render(
                 <Route component={ Dashboard } exact path="/panel"/>
                 <Route component={ MediasList } exact path="/panel/medias"/>
                 <Route component={ MediasForm } exact path="/panel/medias/new"/>
+                <Route component={ MediasForm } exact path="/panel/medias/:id"/>
                 <Route component={ NotFound }/>
             </Switch>
         </ConnectedRouter>

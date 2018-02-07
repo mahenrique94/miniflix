@@ -1,17 +1,22 @@
 import React, { Component } from "react";
-import { Field } from "redux-form";
+import { Field } from "react-final-form";
 
 import "./Data.css";
 
 export default class Input extends Component {
 
     render() {
-        return(
-            <div className="pl-form__group">
+        return( this.checkDatType() );
+    }
+
+    checkDatType() {
+        if (this.props.type !== "hidden") {
+            return (<div className="pl-form__group">
                 <label className="pl-form__text" htmlFor={ this.props.id }>{ this.props.name }</label>
                 <Field className="pl-form__data" { ...this.props } />
-            </div>
-        );
+            </div>);
+        }
+        return <Field className="pl-form__data" { ...this.props } />;
     }
 
 }
