@@ -1,7 +1,7 @@
 import { push } from "react-router-redux";
 import { error, isLoading, success } from "./base";
 
-const removeMediaById = (medias, id) => medias.filter(media => media._id != id);
+const removeMediaById = (medias, id) => medias.filter(media => media._id !== id);
 
 export function edit(id) {
     return dispatch => {
@@ -62,8 +62,12 @@ export function remove(id) {
 export function save(values) {
     return dispatch => {
         dispatch(isLoading(true));
+        let method = "POST";
+        if (values._id) {
+            method = "PUT";
+        }
         fetch("http://localhost:3000/miniflix/api/medias", {
-            method : "POST",
+            method : method,
             headers : {
                 "Accept" : "application/json",
                 "Content-Type" : "application/json"

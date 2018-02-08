@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f773b2-3825-424d-b940-a7eb12f509c5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/actions/media.js" afterPath="$PROJECT_DIR$/app/src/actions/media.js" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/app/menu/Menu.js" afterPath="$PROJECT_DIR$/app/src/components/app/menu/Menu.js" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/panel/medias/list/List.js" afterPath="$PROJECT_DIR$/app/src/components/panel/medias/list/List.js" />
-      <change beforePath="$PROJECT_DIR$/app/src/constants/ActionTypes.js" afterPath="$PROJECT_DIR$/app/src/constants/ActionTypes.js" />
-      <change beforePath="$PROJECT_DIR$/app/src/reducers/base.js" afterPath="$PROJECT_DIR$/app/src/reducers/base.js" />
-      <change beforePath="$PROJECT_DIR$/app/src/reducers/media.js" afterPath="$PROJECT_DIR$/app/src/reducers/generic.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +19,8 @@
       <file leaf-file-name="media.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/actions/media.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-602">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="313">
+              <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -283,12 +277,12 @@
       <workItem from="1517334315988" duration="3590000" />
       <workItem from="1517342916646" duration="3085000" />
       <workItem from="1517913148983" duration="17295000" />
-      <workItem from="1518084860783" duration="917000" />
+      <workItem from="1518084860783" duration="1182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71362000" />
+    <option name="totallyTimeSpent" value="71627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -672,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/actions/media.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-602">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="313">
+          <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
           <folding />
         </state>
       </provider>
