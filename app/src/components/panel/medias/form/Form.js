@@ -13,10 +13,8 @@ import Actions from "../../form/actions/Actions";
 class Form extends Component {
 
     componentDidMount() {
-        if (this.props.match.params) {
-            if (this.props.match.params.id !== undefined && this.props.match.params.id !== "" && this.props.match.params.id.length > 0) {
-                this.props.edit(this.props.match.params.id);
-            }
+        if (this.checkMethodIsEdit()) {
+            this.props.edit(this.props.match.params.id);
         }
     }
 
@@ -26,9 +24,9 @@ class Form extends Component {
                 <NavBar collection="medias" type="form"/>
                 <section className="pl-container">
                     <ReactForm initialValues={ this.props.media } onSubmit={ this.props.save } render={ ({ handleSubmit }) => (
-                        <form className="pl-form" onSubmit={ handleSubmit }>
+                        <form autoComplete="off" className="pl-form" onSubmit={ handleSubmit }>
                             <Data component="input" id="id" name="_id" type="hidden"/>
-                            <Data component="input" id="title" maxLength="120" name="title" required type="text"/>
+                            <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
                             <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
                             <Actions collection="medias"/>
                         </form>
@@ -36,6 +34,19 @@ class Form extends Component {
                 </section>
             </Panel>
         );
+    }
+
+    checkAutoFocus() {
+        return !this.checkMethodIsEdit();
+    }
+
+    checkMethodIsEdit() {
+        if (this.props.match.params) {
+            if (this.props.match.params.id !== undefined && this.props.match.params.id !== "" && this.props.match.params.id.length > 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
