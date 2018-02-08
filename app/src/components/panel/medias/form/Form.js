@@ -9,7 +9,6 @@ import NavBar from "../../nav_bar/NavBar";
 import Panel from "../../../../containers/panel/Panel";
 import Actions from "../../form/actions/Actions";
 
-
 class Form extends Component {
 
     componentDidMount() {
@@ -24,7 +23,7 @@ class Form extends Component {
                 <NavBar collection="medias" type="form"/>
                 <section className="pl-container">
                     <ReactForm initialValues={ this.props.media } onSubmit={ this.props.save } render={ ({ handleSubmit }) => (
-                        <form autoComplete="off" className="pl-form" onSubmit={ handleSubmit }>
+                        <form autoComplete="off" className="pl-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
                             <Data component="input" id="id" name="_id" type="hidden"/>
                             <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
                             <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
