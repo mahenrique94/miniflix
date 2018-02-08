@@ -37,8 +37,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        list : () => dispatch(list()),
-        delete: id => dispatch(remove(id))
+        delete: id => dispatch(remove(id)),
+        list : () => dispatch(list())
     }
 
 }
