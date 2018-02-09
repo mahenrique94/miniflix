@@ -43,7 +43,7 @@ module.exports = () => {
 
     api.disable("x-powered-by");
 
-    consign({cwd : "api"}).include("models").then("controllers").then("routes").into(api);
+    consign({cwd : "api"}).include("models").then("controllers").then("routes/auth").then("routes").into(api);
 
     return api;
 
