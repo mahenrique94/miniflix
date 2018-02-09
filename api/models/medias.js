@@ -61,6 +61,16 @@ module.exports = () => {
                 type : String
             },
         }],
+        image : {
+            maxlength : 255,
+            required : false,
+            type : String
+        },
+        video : {
+            maxlength : 255,
+            required : false,
+            type : String
+        },
         slug : {
             index : {
                 unique : true

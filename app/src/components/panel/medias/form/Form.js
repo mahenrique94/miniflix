@@ -9,7 +9,16 @@ import NavBar from "../../nav_bar/NavBar";
 import Panel from "../../../../containers/panel/Panel";
 import Actions from "../../form/actions/Actions";
 
+import "./Form.css";
+
 class Form extends Component {
+
+    constructor() {
+        super();
+
+        this.processFile = this.processFile.bind(this);
+        this.chooseFile = this.chooseFile.bind(this);
+    }
 
     componentDidMount() {
         if (this.checkMethodIsEdit()) {
@@ -24,9 +33,17 @@ class Form extends Component {
                 <section className="pl-container">
                     <ReactForm initialValues={ this.props.media } onSubmit={ this.props.save } render={ ({ handleSubmit }) => (
                         <form autoComplete="off" className="pl-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
-                            <Data component="input" id="id" name="_id" type="hidden"/>
-                            <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
-                            <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
+                            <input className="pl-form__data is-hide" onChange={ this.processFile } ref={ input => this.file = input } type="file"/>
+                            <section className="pl-form__body">
+                                <div className={`pl-form__elements ${ this.checkMethodIsEdit() ? "" : "is-full"}`}>
+                                    <Data component="input" id="id" name="_id" type="hidden"/>
+                                    <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
+                                    <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
+                                </div>
+                                <div className={`pl-form__source ${ this.checkMethodIsEdit() ? "is-show" : "is-hide"}`}>
+                                    <button className="pl-form__trigger" onClick={ this.chooseFile } type="button"><img alt="" className="pl-form__img" ref={ input => this.image = input }/></button>
+                                </div>
+                            </section>
                             <Actions collection="medias"/>
                         </form>
                     )}/>
@@ -46,6 +63,14 @@ class Form extends Component {
             }
         }
         return false;
+    }
+
+    chooseFile() {
+        this.file.click();
+    }
+
+    processFile(event) {
+        this.image.src = URL.createObjectURL(event.target.files[0]);
     }
 
 }

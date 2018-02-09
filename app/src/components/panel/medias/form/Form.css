@@ -1,0 +1,25 @@
+.pl-form__body {
+    display: flex;
+    justify-content: space-between;
+}
+.pl-form__elements {
+    width: 68.5%;
+}
+.pl-form__elements.is-full {
+    width: 100%;
+}
+.pl-form__source {
+    width: 30%;
+}
+.pl-form__trigger {
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+.pl-form__img {
+    border: 1px solid #DCDCDC;
+    border-radius: 7px;
+    height: 270px;
+    margin-top: 1rem;
+    width: 100%;
+}

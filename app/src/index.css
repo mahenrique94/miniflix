@@ -1,3 +1,10 @@
 body {
     background: #FDFDFD;
 }
+
+.is-hide {
+    display: none;
+}
+.is-show {
+    display: block;
+}
