@@ -32,7 +32,7 @@ class Login extends Component {
 const mapDispatchToProps = dispatch => {
 
     return {
-        login : values => dispatch(login())
+        login : values => dispatch(login(values))
     }
 
 }

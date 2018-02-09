@@ -8,6 +8,7 @@ const cors = require("cors");
 const path = require("path");
 const methodOverride = require("method-override");
 const multer = require("multer");
+const morgan = require("morgan");
 
 const prefix = express.Router();
 const router = express.Router();
@@ -34,6 +35,8 @@ module.exports = () => {
 
     api.use(helmet.xssFilter());
     api.use(helmet.noSniff());
+
+    api.use(morgan("dev"));
 
     api.use(`/${api.get("api_name")}`, prefix);
     prefix.use("/api", router);
