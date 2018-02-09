@@ -26,7 +26,6 @@ module.exports = api => {
             const token = req.body.token || req.query.token || req.headers["x-access-token"];
             if (token) {
                 jwt.verify(token, api.get("api_secret"), (err, decoded) => {
-                    console.log(decoded);
                     if (err) {
                         return res.status(401).json({"message" : "Failed attempt to authenticate token"});
                     }
