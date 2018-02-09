@@ -15,9 +15,13 @@ import MediasForm from "./components/panel/medias/form/Form";
 import NotFound from "./components/panel/not_found/NotFound";
 
 import "normalize.css";
-import "font-awesome/css/font-awesome.min.css"
 import "./assets/css/reset.css";
 import './index.css';
+
+import fontawesome from "@fortawesome/fontawesome";
+import "@fortawesome/fontawesome-free-brands";
+import "@fortawesome/fontawesome-free-regular";
+import "@fortawesome/fontawesome-free-solid";
 
 ReactDOM.render(
     <Provider store={ store }>

@@ -14,7 +14,7 @@ export default class Media extends Component {
                 </header>
                 <section className="mf-media__content">{ this.props.describe }</section>
                 <footer className="mf-media__footer">
-                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fas fa-eye mf-media__icon"></i>Visualizar</Link>
+                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fa fa-eye mf-media__icon"></i>Visualizar</Link>
                 </footer>
             </div>
         );

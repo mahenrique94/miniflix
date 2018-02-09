@@ -9,7 +9,7 @@ export default class NotFound extends Component {
         return(
             <section className="pl-notFound">
                 <h1 className="pl-notFound__title">Page Not Found</h1>
-                <Link className="pl-notFound__link" to="/panel">Return to Dashboard</Link>
+                <Link className="pl-notFound__link" to="/panel"><i className="fas fa-home pl-notFound__icon"></i>Return to Dashboard</Link>
             </section>
         );
     }
