@@ -29,12 +29,12 @@ ReactDOM.render(
     <Provider store={ store }>
         <ConnectedRouter history={ history }>
             <Switch>
-                <Route component={ Medias } exact path="/"/>
                 <Route component={ Login } exact path="/panel/login"/>
                 <Route path="*" render={() => {
                     if (isLogged()) {
                         return (
                             <Switch>
+                                <Route component={ Medias } exact path="/"/>
                                 <Route component={ Dashboard } exact path="/panel"/>
                                 <Route component={ MediasList } exact path="/panel/medias"/>
                                 <Route component={ MediasForm } exact path="/panel/medias/new"/>
