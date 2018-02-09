@@ -14,7 +14,7 @@ module.exports = api => {
                     if (!user) {
                         return res.status(401).json({"message" : "Authentication failed, user not found"});
                     }
-                    const token = jwt.sign({ "payload" : user.username}, api.get("api_secret"), {expiresIn : "7d"});
+                    const token = jwt.sign({"payload" : user}, api.get("api_secret"), {expiresIn : "7d"});
                     return res.send({token});
                 })
                 .catch(error => {
@@ -26,6 +26,7 @@ module.exports = api => {
             const token = req.body.token || req.query.token || req.headers["x-access-token"];
             if (token) {
                 jwt.verify(token, api.get("api_secret"), (err, decoded) => {
+                    console.log(decoded);
                     if (err) {
                         return res.status(401).json({"message" : "Failed attempt to authenticate token"});
                     }
