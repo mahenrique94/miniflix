@@ -16,8 +16,9 @@ class Form extends Component {
     constructor() {
         super();
 
-        this.processFile = this.processFile.bind(this);
         this.chooseFile = this.chooseFile.bind(this);
+        this.download = this.download.bind(this);
+        this.processFile = this.processFile.bind(this);
     }
 
     componentDidMount() {
@@ -33,7 +34,7 @@ class Form extends Component {
                 <section className="pl-container">
                     <ReactForm initialValues={ this.props.media } onSubmit={ this.props.save } render={ ({ handleSubmit }) => (
                         <form autoComplete="off" className="pl-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
-                            <input className="pl-form__data is-hide" onChange={ this.processFile } ref={ input => this.file = input } type="file"/>
+                            <input accept="image/jpeg,image/png" className="pl-form__data is-hide" onChange={ this.processFile } ref={ input => this.file = input } type="file"/>
                             <section className="pl-form__body">
                                 <div className={`pl-form__elements ${ this.checkMethodIsEdit() ? "" : "is-full"}`}>
                                     <Data component="input" id="id" name="_id" type="hidden"/>
@@ -41,7 +42,7 @@ class Form extends Component {
                                     <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
                                 </div>
                                 <div className={`pl-form__source ${ this.checkMethodIsEdit() ? "is-show" : "is-hide"}`}>
-                                    <button className="pl-form__trigger" onClick={ this.chooseFile } type="button"><img alt="" className="pl-form__img" ref={ input => this.image = input }/></button>
+                                    <button className="pl-form__trigger" onClick={ this.chooseFile } type="button"><img alt={ this.props.media.title } className="pl-form__img" ref={ input => this.image = input } src={ this.download() }/></button>
                                 </div>
                             </section>
                             <Actions collection="medias"/>
@@ -50,6 +51,13 @@ class Form extends Component {
                 </section>
             </Panel>
         );
+    }
+
+    buildBody(file) {
+        const data = new FormData();
+        data.append("_id", this.props.media._id);
+        data.append("file", file);
+        return data;
     }
 
     checkAutoFocus() {
@@ -69,8 +77,26 @@ class Form extends Component {
         this.file.click();
     }
 
+    download() {
+        if (this.props.media !== undefined && this.props.media.image !== undefined)
+            return `http://localhost:3000/miniflix/api/file/download/${this.props.media.image}?token=${sessionStorage.getItem("access-token")}`
+        return "";
+    }
+
     processFile(event) {
-        this.image.src = URL.createObjectURL(event.target.files[0]);
+        const file = event.target.files[0];
+        fetch("http://localhost:3000/miniflix/api/file/upload", {
+            method : "POST",
+            headers : {
+                "x-access-token" : sessionStorage.getItem("access-token")
+            },
+            body : this.buildBody(file)
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("An error was raised on trying upload a file to API");
+            }
+            this.image.src = URL.createObjectURL(file);
+        }).catch(error => console.error(error));
     }
 
 }
