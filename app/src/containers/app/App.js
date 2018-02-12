@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Header from "../../components/app/header/Header";
+import Header from "./../../components/app/header/Header";
 
 import './App.css';
 

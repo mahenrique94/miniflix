@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Header from "../../components/panel/header/Header";
+import Header from "./../../components/panel/header/Header";
 
 import "./Panel.css";
 

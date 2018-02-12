@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form as ReactForm } from "react-final-form";
 
-import { login } from "../../../actions/login";
+import { login } from "./../../../actions/login";
 
-import DataGroup from "../form/data_group/DataGroup";
+import DataGroup from "./../form/data_group/DataGroup";
 
 import "./Login.css";
 

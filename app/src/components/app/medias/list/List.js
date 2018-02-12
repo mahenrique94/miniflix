@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import App from "../../../../containers/app/App";
-import Media from "../../media/Media";
+import App from "./../../../../containers/app/App";
+import Media from "./../../media/Media";
 
-import { list } from "../../../../actions/media";
+import { list } from "./../../../../actions/media";
 
 class Medias extends Component {
 

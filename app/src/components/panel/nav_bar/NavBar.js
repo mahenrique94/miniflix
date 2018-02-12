@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Breadcrumb from "../breadcrumb/Breadcrumb";
+import Breadcrumb from "./../breadcrumb/Breadcrumb";
 
 import "./NavBar.css";
 

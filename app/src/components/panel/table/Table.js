@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Delete from "../form/delete/Delete";
+import Delete from "./../form/delete/Delete";
 
 import "./Table.css";
 

@@ -4,6 +4,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from "react-redux";
 import { Route, Switch, Redirect } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
+import { IntlProvider, addLocaleData } from "react-intl";
+import en from "react-intl/locale-data/en";
+import br from "react-intl/locale-data/br";
 import store, { history } from "./store";
 
 import Medias from './components/app/medias/list/List';
@@ -23,32 +26,36 @@ import "@fortawesome/fontawesome-free-brands";
 import "@fortawesome/fontawesome-free-regular";
 import "@fortawesome/fontawesome-free-solid";
 
+addLocaleData([...en, ...br]);
+
 const isLogged = () => sessionStorage.getItem("access-token") !== null;
 
 ReactDOM.render(
-    <Provider store={ store }>
-        <ConnectedRouter history={ history }>
-            <Switch>
-                <Route component={ Login } exact path="/panel/login"/>
-                <Route path="*" render={() => {
-                    if (isLogged()) {
-                        return (
-                            <Switch>
-                                <Route component={ Medias } exact path="/"/>
-                                <Route component={ Dashboard } exact path="/panel"/>
-                                <Route component={ MediasList } exact path="/panel/medias"/>
-                                <Route component={ MediasForm } exact path="/panel/medias/new"/>
-                                <Route component={ MediasForm } exact path="/panel/medias/:id"/>
-                                <Route component={ NotFound }/>
-                            </Switch>
-                        );
-                    } else {
-                        return <Redirect to="/panel/login"/>
-                    }
-                }}/>
-            </Switch>
-        </ConnectedRouter>
-    </Provider>,
+    <IntlProvider>
+        <Provider store={ store }>
+            <ConnectedRouter history={ history }>
+                <Switch>
+                    <Route component={ Login } exact path="/panel/login"/>
+                    <Route path="*" render={() => {
+                        if (isLogged()) {
+                            return (
+                                <Switch>
+                                    <Route component={ Medias } exact path="/"/>
+                                    <Route component={ Dashboard } exact path="/panel"/>
+                                    <Route component={ MediasList } exact path="/panel/medias"/>
+                                    <Route component={ MediasForm } exact path="/panel/medias/new"/>
+                                    <Route component={ MediasForm } exact path="/panel/medias/:id"/>
+                                    <Route component={ NotFound }/>
+                                </Switch>
+                            );
+                        } else {
+                            return <Redirect to="/panel/login"/>
+                        }
+                    }}/>
+                </Switch>
+            </ConnectedRouter>
+        </Provider>
+    </IntlProvider>,
     document.getElementById('root')
 );
 

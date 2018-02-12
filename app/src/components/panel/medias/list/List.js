@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { remove, list } from "../../../../actions/media";
+import { remove, list } from "./../../../../actions/media";
 
-import NavBar from "../../nav_bar/NavBar";
-import Panel from "../../../../containers/panel/Panel";
-import Table from "../../table/Table";
+import NavBar from "./../../nav_bar/NavBar";
+import Panel from "./../../../../containers/panel/Panel";
+import Table from "./../../table/Table";
 
 class Medias extends Component {
 

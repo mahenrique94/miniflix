@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Form as ReactForm } from "react-final-form";
 import { connect } from "react-redux";
 
-import { edit, save } from "../../../../actions/media";
+import { edit, save } from "./../../../../actions/media";
 
-import Data from "../../form/data/Data";
-import NavBar from "../../nav_bar/NavBar";
-import Panel from "../../../../containers/panel/Panel";
-import Actions from "../../form/actions/Actions";
+import Data from "./../../form/data/Data";
+import NavBar from "./../../nav_bar/NavBar";
+import Panel from "./../../../../containers/panel/Panel";
+import Actions from "./../../form/actions/Actions";
 
 import "./Form.css";
 

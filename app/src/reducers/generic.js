@@ -1,4 +1,4 @@
-import * as Types from "../constants/ActionTypes";
+import * as Types from "./../constants/ActionTypes";
 
 export function error(state = "", action) {
     if (action.type === Types.ERROR) {
