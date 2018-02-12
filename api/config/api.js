@@ -17,10 +17,11 @@ module.exports = () => {
 
     const api = express();
 
+    api.set("api_directory", API_DIRECTORY);
     api.set("api_name", API_NAME);
     api.set("api_port", "3000");
+    api.set("api_router", router);
     api.set("api_secret", "chaves");
-    api.set("router", router);
 
     api.use(multer({dest : API_DIRECTORY}).any());
 
@@ -43,7 +44,7 @@ module.exports = () => {
 
     api.disable("x-powered-by");
 
-    consign({cwd : "api"}).include("models").then("controllers").then("routes/auth").then("routes").into(api);
+    consign({cwd : "api"}).include("./models").then("./controllers").then("./routes/init.js").then("./routes/auth.js").then("./routes").into(api);
 
     return api;
 

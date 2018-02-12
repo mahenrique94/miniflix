@@ -1,5 +1,7 @@
+const slug = require("slug");
 const fs = require("fs");
 const path = require("path");
+const fileType = require("file-type");
 
 module.exports = () => {
 
@@ -11,13 +13,14 @@ module.exports = () => {
                         reject(error);
                     }
 
-                    const to = path.join(file.destination, `${file.name}.${file.type}`);
+                    const uploaded = `${slug(file.originalname.toString().substring(0, file.originalname.lastIndexOf(".")).toLowerCase())}.${fileType(data).ext}`;
+                    const to = path.join(file.destination, uploaded);
                     const stream = fs.createWriteStream(to);
                     stream.write(data);
                     stream.end();
                     fs.unlink(file.path);
 
-                    resolve(`${file.name} uploaded with sucess`);
+                    resolve(uploaded);
                 });
             });
         }
