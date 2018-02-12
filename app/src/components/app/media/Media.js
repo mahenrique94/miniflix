@@ -9,7 +9,7 @@ export default class Media extends Component {
         return(
             <div className="mf-media">
                 <header className="mf-media__header">
-                    <div className="mf-media__picture" style={{ backgroundImage : "url(http://1.images.southparkstudios.com/blogs/southparkstudios.com/files/2017/05/Untitled-1_1.jpg?quality=0.8)" }}></div>
+                    <div className="mf-media__picture" style={{ backgroundImage : `url(http://localhost:3000/miniflix/api/file/download/${this.props.image}?token=${sessionStorage.getItem("access-token")})` }}></div>
                     <Link className="mf-media__title" to={ `/detail/${this.props.slug}` }>{ this.props.title }</Link>
                 </header>
                 <section className="mf-media__content">{ this.props.describe }</section>

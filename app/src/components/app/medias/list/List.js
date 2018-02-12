@@ -16,7 +16,7 @@ class Medias extends Component {
         return(
             <App>
                 <div className="mf-container">
-                    { this.props.medias.map(media => <Media key={ media._id } title={ media.title } describe={ media.describe } slug={ media.slug }/>) }
+                    { this.props.medias.map(media => <Media key={ media._id } describe={ media.describe } title={ media.title } image={ media.image } slug={ media.slug }/>) }
                 </div>
             </App>
         );
