@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 import Delete from "./../form/delete/Delete";
 
@@ -42,3 +43,9 @@ export default class Table extends Component {
 }
 
 
+Table.propTypes = {
+
+    list : PropTypes.array.isRequired,
+    columns : PropTypes.array.isRequired
+
+}

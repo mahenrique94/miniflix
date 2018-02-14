@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 import "./Breadcrumb.css";
 
@@ -13,4 +14,10 @@ export default class Breadcrumb extends Component {
         );
     }
 
+}
+
+Breadcrumb.propTypes = {
+
+    title : PropTypes.string.isRequired
+    
 }

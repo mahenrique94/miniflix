@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 import "./Media.css";
 
@@ -21,4 +22,12 @@ export default class Media extends Component {
         );
     }
 
+}
+
+Media.propTypes = {
+
+    describe : PropTypes.string.isRequired,
+    slug : PropTypes.string.isRequired,
+    title : PropTypes.string.isRequired
+    
 }

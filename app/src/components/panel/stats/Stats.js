@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import jwt from "jsonwebtoken";
+import PropTypes from "prop-types";
 
 import { logout } from "../../../actions/auth";
 
@@ -29,6 +30,12 @@ class Stats extends Component {
     getUser() {
         return jwt.verify(sessionStorage.getItem("access-token"), "chaves").payload;
     }
+
+}
+
+Stats.propTypes = {
+
+    logout : PropTypes.func.isRequired
 
 }
 

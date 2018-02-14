@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Field } from "react-final-form";
+import PropTypes from "prop-types";
 
 import "./DataGroup.css";
 
@@ -13,5 +14,18 @@ export default class DataGroup extends Component {
             </div>
         );
     }
+
+}
+
+DataGroup.propTypes = {
+
+    autoFocus : PropTypes.bool,
+    component : PropTypes.string.isRequired,
+    id : PropTypes.string.isRequired,
+    max : PropTypes.string,
+    maxLength : PropTypes.string,
+    min : PropTypes.string,
+    name : PropTypes.string.isRequired,
+    type : PropTypes.string.isRequired
 
 }

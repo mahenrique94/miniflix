@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import App from "./../../../../containers/app/App";
 import Media from "./../../media/Media";
@@ -22,6 +23,13 @@ class Medias extends Component {
         );
     }
 
+}
+
+Medias.propTypes = {
+
+    medias : PropTypes.array.isRequired,
+    list : PropTypes.func.isRequired
+    
 }
 
 const mapStateToProps = state => {

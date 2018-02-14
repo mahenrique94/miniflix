@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { remove, list } from "./../../../../actions/media";
 
@@ -23,6 +24,14 @@ class Medias extends Component {
             </Panel>
         );
     }
+
+}
+
+Medias.propTypes = {
+
+    delete : PropTypes.func.isRequired,
+    list : PropTypes.func.isRequired,
+    medias : PropTypes.array.isRequired
 
 }
 

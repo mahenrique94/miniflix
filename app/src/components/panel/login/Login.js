@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form as ReactForm } from "react-final-form";
 import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
 import { login } from "./../../../actions/auth";
 
@@ -42,6 +43,15 @@ class Login extends Component {
     }
 
 }
+
+Login.propTypes = {
+
+    intl : PropTypes.object.isRequired,
+    login : PropTypes.func.isRequired,
+    message : PropTypes.string.isRequired
+
+}
+
 
 const mapStateToProps = state => {
 

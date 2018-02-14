@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form as ReactForm } from "react-final-form";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { edit, save } from "./../../../../actions/media";
 
@@ -98,6 +99,13 @@ class Form extends Component {
             this.image.src = URL.createObjectURL(file);
         }).catch(error => console.error(error));
     }
+
+}
+
+Form.propTypes = {
+
+    edit : PropTypes.func.isRequired,
+    save : PropTypes.func.isRequired
 
 }
 

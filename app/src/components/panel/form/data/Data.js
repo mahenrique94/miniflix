@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Field } from "react-final-form";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 import "./Data.css";
 
-export default class Input extends Component {
+export default class Data extends Component {
 
     render() {
         return( this.checkDataType() );
@@ -19,5 +20,18 @@ export default class Input extends Component {
         }
         return <Field className="pl-form__data" { ...this.props } />;
     }
+
+}
+
+Data.propTypes = {
+
+    autoFocus : PropTypes.bool,
+    component : PropTypes.string.isRequired,
+    id : PropTypes.string.isRequired,
+    max : PropTypes.string,
+    maxLength : PropTypes.string,
+    min : PropTypes.string,
+    name : PropTypes.string.isRequired,
+    type : PropTypes.string.isRequired
 
 }

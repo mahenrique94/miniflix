@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 export default class Delete extends Component {
 
@@ -20,5 +21,11 @@ export default class Delete extends Component {
             this.props.delete(this.props.id);
         }
     }
+
+}
+
+Delete.propTypes = {
+
+    delete : PropTypes.func.isRequired
 
 }

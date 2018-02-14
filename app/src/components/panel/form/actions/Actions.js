@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
 
 import "./Actions.css";
 
@@ -14,5 +15,11 @@ export default class Actions extends Component {
             </div>
         );
     }
+
+}
+
+Actions.propTypes = {
+
+    collection : PropTypes.string.isRequired
 
 }
