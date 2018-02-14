@@ -1,17 +1,13 @@
 import { push } from "react-router-redux";
 import { error, isLoading, success } from "./base";
+import { http } from "./../helpers/http";
 
-const headers = {
-    "Accept" : "application/json",
-    "Content-Type" : "application/json",
-    "x-access-token" : sessionStorage.getItem("access-token")
-}
 const removeMediaById = (medias, id) => medias.filter(media => media._id !== id);
 
 export function edit(id) {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch(`http://localhost:3000/miniflix/api/medias/${id}`, { headers })
+        fetch(`http://localhost:3000/miniflix/api/medias/${id}`, { headers : http.buildHeaders() })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("An error raised on getting media from API");
@@ -28,7 +24,7 @@ export function edit(id) {
 export function list() {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch("http://localhost:3000/miniflix/api/medias", { headers })
+        fetch("http://localhost:3000/miniflix/api/medias", { headers : http.buildHeaders() })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("An error raised on getting medias from API");
@@ -47,7 +43,7 @@ export function remove(id) {
         dispatch(isLoading(true));
         fetch("http://localhost:3000/miniflix/api/medias", {
             method : "DELETE",
-            headers,
+            headers : http.buildHeaders(),
             body: JSON.stringify({ "_id" : id})
         }).then(response => {
             const medias = getState().success;
@@ -70,7 +66,7 @@ export function save(values) {
         }
         fetch("http://localhost:3000/miniflix/api/medias", {
             method : method,
-            headers,
+            headers : http.buildHeaders(),
             body: JSON.stringify(values)
         }).then(response => {
             if (!response.ok) {

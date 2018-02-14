@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../helpers/i18n";
 import PropTypes from "prop-types";
 
 import "./Media.css";
@@ -16,7 +16,7 @@ export default class Media extends Component {
                 </header>
                 <section className="mf-media__content">{ this.props.describe }</section>
                 <footer className="mf-media__footer">
-                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fa fa-eye mf-media__icon"></i><FormattedMessage id="button.view"/></Link>
+                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fa fa-eye mf-media__icon"></i>{ i18n.message("button.view") }</Link>
                 </footer>
             </div>
         );

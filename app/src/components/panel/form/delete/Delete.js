@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../../helpers/i18n";
 import PropTypes from "prop-types";
 
 export default class Delete extends Component {
@@ -12,7 +12,7 @@ export default class Delete extends Component {
 
     render() {
         return(
-            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i><FormattedMessage id="button.delete"/></button>
+            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i>{ i18n.message("button.delete") }</button>
         );
     }
 

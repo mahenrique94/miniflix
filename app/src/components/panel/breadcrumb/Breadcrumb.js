@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../helpers/i18n";
 import PropTypes from "prop-types";
 
 import "./Breadcrumb.css";
@@ -9,7 +9,7 @@ export default class Breadcrumb extends Component {
     render() {
         return(
             <div className="pl-breadcrumb">
-                <span className="pl-breadcrumb__title"><FormattedMessage id={ `menu.${this.props.title}` }/></span>
+                <span className="pl-breadcrumb__title">{ i18n.message(`menu.${this.props.title}`) }</span>
             </div>
         );
     }
