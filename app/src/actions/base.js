@@ -16,6 +16,13 @@ export function isLoading(loading) {
     }
 }
 
+export function message(message) {
+    return {
+        type : ActionTypes.MESSAGE,
+        payload : { message }
+    }
+}
+
 export function success(data) {
     return {
         type : ActionTypes.SUCCESS,

@@ -1,5 +1,5 @@
 import { push } from "react-router-redux";
-import { error, isLoading } from "./base";
+import { error, isLoading, message } from "./base";
 
 export function login(values) {
     return dispatch => {
@@ -27,9 +27,20 @@ export function login(values) {
             }
         })
         .catch(err => {
+            dispatch(message("Usuário ou senha inválidos"));
             dispatch(error(err));
             dispatch(push("/panel/login"));
         });
+        
+        values.password = "";
         return values;
+    }
+}
+
+export function logout() {
+    return dispatch => {
+        sessionStorage.removeItem("access-token");
+        dispatch(message(""));
+        dispatch(push("/panel/login"));
     }
 }

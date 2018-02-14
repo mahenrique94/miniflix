@@ -14,6 +14,13 @@ export function loading(state = false, action) {
     return state;
 }
 
+export function message(state = "", action) {
+    if (action.type === Types.MESSAGE) {
+        return action.payload.message;
+    }
+    return state;
+}
+
 export function success(state = [], action) {
     if (action.type === Types.SUCCESS) {
         return action.payload.data;

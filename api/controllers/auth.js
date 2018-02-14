@@ -12,7 +12,7 @@ module.exports = api => {
             user.findOne(req.body).exec()
                 .then(user => {
                     if (!user) {
-                        return res.status(401).json({"message" : "Authentication failed, user not found"});
+                        return res.status(401).json({message : "Authentication failed, user not found"});
                     }
                     const token = jwt.sign({"payload" : user}, api.get("api_secret"), {expiresIn : "7d"});
                     return res.send({token});
@@ -27,13 +27,13 @@ module.exports = api => {
             if (token) {
                 jwt.verify(token, api.get("api_secret"), (err, decoded) => {
                     if (err) {
-                        return res.status(401).json({"message" : "Failed attempt to authenticate token"});
+                        return res.status(401).json({message : "Failed attempt to authenticate token"});
                     }
                     req.decoded = decoded;
                     next();
                 });
             } else {
-                return res.status(403).json({"message" : "No token provided"});
+                return res.status(403).json({message : "No token provided"});
             }
         }
     }

@@ -6,6 +6,7 @@ export default {
         "button.delete" : "Deletar",
         "button.edit" : "Editar",
         "button.login" : "Acessar",
+        "button.logout" : "Sair",
         "button.new" : "Novo",
         "button.return.home" : "Retornar para a página inicial",
         "button.save" : "Salvar",
