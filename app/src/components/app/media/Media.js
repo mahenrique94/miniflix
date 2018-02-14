@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 import "./Media.css";
 
@@ -14,7 +15,7 @@ export default class Media extends Component {
                 </header>
                 <section className="mf-media__content">{ this.props.describe }</section>
                 <footer className="mf-media__footer">
-                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fa fa-eye mf-media__icon"></i>Visualizar</Link>
+                    <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }><i className="fa fa-eye mf-media__icon"></i><FormattedMessage id="button.view"/></Link>
                 </footer>
             </div>
         );

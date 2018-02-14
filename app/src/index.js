@@ -4,9 +4,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from "react-redux";
 import { Route, Switch, Redirect } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
-import { IntlProvider, addLocaleData } from "react-intl";
+import { addLocaleData, IntlProvider } from "react-intl";
 import en from "react-intl/locale-data/en";
-import br from "react-intl/locale-data/br";
+import br from "react-intl/locale-data/pt";
 import store, { history } from "./store";
 
 import Medias from './components/app/medias/list/List';
@@ -26,12 +26,16 @@ import "@fortawesome/fontawesome-free-brands";
 import "@fortawesome/fontawesome-free-regular";
 import "@fortawesome/fontawesome-free-solid";
 
+import messages from "./messages.js";
+
 addLocaleData([...en, ...br]);
 
 const isLogged = () => sessionStorage.getItem("access-token") !== null;
+const locale = navigator.languages.length ? navigator.languages[0] : navigator.language;
+const getMessages = () => messages[locale.split("-")[0]];
 
 ReactDOM.render(
-    <IntlProvider>
+    <IntlProvider locale={ locale } messages={ getMessages() }>
         <Provider store={ store }>
             <ConnectedRouter history={ history }>
                 <Switch>
