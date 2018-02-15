@@ -1,13 +1,15 @@
 import { push } from "react-router-redux";
 import { error, isLoading, success } from "./base";
 import { http } from "./../helpers/http";
+import config from "./../config";
 
+const MEDIAS_API_URL = `${config.API_URL}/medias`;
 const removeMediaById = (medias, id) => medias.filter(media => media._id !== id);
 
 export function edit(id) {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch(`http://localhost:3000/miniflix/api/medias/${id}`, { headers : http.buildHeaders() })
+        fetch(`${MEDIAS_API_URL}/${id}`, { headers : http.buildHeaders() })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("An error raised on getting media from API");
@@ -24,7 +26,7 @@ export function edit(id) {
 export function list() {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch("http://localhost:3000/miniflix/api/medias", { headers : http.buildHeaders() })
+        fetch(MEDIAS_API_URL, { headers : http.buildHeaders() })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("An error raised on getting medias from API");
@@ -41,7 +43,7 @@ export function list() {
 export function remove(id) {
     return (dispatch, getState) => {
         dispatch(isLoading(true));
-        fetch("http://localhost:3000/miniflix/api/medias", {
+        fetch(MEDIAS_API_URL, {
             method : "DELETE",
             headers : http.buildHeaders(),
             body: JSON.stringify({ "_id" : id})
@@ -64,7 +66,7 @@ export function save(values) {
         if (values._id) {
             method = "PUT";
         }
-        fetch("http://localhost:3000/miniflix/api/medias", {
+        fetch(MEDIAS_API_URL, {
             method : method,
             headers : http.buildHeaders(),
             body: JSON.stringify(values)

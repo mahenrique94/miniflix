@@ -1,10 +1,11 @@
 import { push } from "react-router-redux";
 import { error, isLoading, message } from "./base";
+import config from "./../config";
 
 export function login(values) {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch("http://localhost:3000/miniflix/api/auth", {
+        fetch(`${config.API_URL}/auth`, {
             method : "POST",
             headers : {
                 "Accept" : "application/json",

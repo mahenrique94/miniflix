@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form as ReactForm } from "react-final-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import config from "./../../../../config";
 
 import { edit, save } from "./../../../../actions/media";
 
@@ -80,13 +81,13 @@ class Form extends Component {
 
     download() {
         if (this.props.media !== undefined && this.props.media.image !== undefined)
-            return `http://localhost:3000/miniflix/api/file/download/${this.props.media.image}?token=${sessionStorage.getItem("access-token")}`
+            return `${config.API_URL}/file/download/${this.props.media.image}?token=${sessionStorage.getItem("access-token")}`
         return "";
     }
 
     processFile(event) {
         const file = event.target.files[0];
-        fetch("http://localhost:3000/miniflix/api/file/upload", {
+        fetch(`${config.API_URL}/file/upload`, {
             method : "POST",
             headers : {
                 "x-access-token" : sessionStorage.getItem("access-token")
