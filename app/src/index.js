@@ -9,17 +9,16 @@ import en from "react-intl/locale-data/en";
 import br from "react-intl/locale-data/pt";
 import store, { history } from "./store";
 
-import Medias from './components/app/medias/list/List';
+import Medias from './components/app/medias/List';
 
-import Dashboard from "./components/panel/dashboard/Dashboard"
-import Login from "./components/panel/login/Login";
-import MediasList from "./components/panel/medias/list/List";
-import MediasForm from "./components/panel/medias/form/Form";
-import NotFound from "./components/panel/not_found/NotFound";
+import Dashboard from "./components/panel/Dashboard";
+import Login from "./components/panel/Login";
+import MediasList from "./components/panel/medias/List";
+import MediasForm from "./components/panel/medias/Form";
+import NotFound from "./components/panel/NotFound";
 
 import "normalize.css";
 import "./assets/sass/index.sass";
-import './index.css';
 
 import "@fortawesome/fontawesome";
 import "@fortawesome/fontawesome-free-brands";
