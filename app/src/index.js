@@ -25,7 +25,7 @@ import "@fortawesome/fontawesome-free-brands";
 import "@fortawesome/fontawesome-free-regular";
 import "@fortawesome/fontawesome-free-solid";
 
-import messages from "./messages.js";
+import { messages } from "./messages/";
 
 addLocaleData([...en, ...br]);
 

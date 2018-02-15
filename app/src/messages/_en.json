@@ -1,0 +1,26 @@
+{
+    "button.cancel" : "Cancel",
+    "button.delete" : "Delete",
+    "button.edit" : "Edit",
+    "button.login" : "Login",
+    "button.logout" : "Logout",
+    "button.new" : "New",
+    "button.return.home" : "Return to main page",
+    "button.save" : "Save",
+    "button.view" : "View",
+
+    "label.describe" : "Describe",
+    "label.title" : "Title",
+
+    "menu.medias" : "Medias",
+    "menu.movies" : "Movies",
+    "menu.series" : "Séries",
+    "menu.animes" : "Animes",
+
+    "message.page.not.found" : "Page not found",
+
+    "placeholder.type.password" : "Type here your password",
+    "placeholder.type.user" : "Type here your username",
+
+    "title.app" : "Miniflix"
+}
