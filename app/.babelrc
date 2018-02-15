@@ -1,13 +1,8 @@
 {
-    "presets": ["es2015", "react"],
+    "presets": ["env", "react", "react-app"],
     "plugins": [
       "transform-object-rest-spread",
       "transform-runtime",
-      [
-        "react-intl", {
-          "messagesDir": "./messages",
-          "enforceDescriptions": false
-        }
-      ]
+      "transform-class-properties"
     ]
   }
