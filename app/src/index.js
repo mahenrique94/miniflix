@@ -18,7 +18,7 @@ import MediasForm from "./components/panel/medias/form/Form";
 import NotFound from "./components/panel/not_found/NotFound";
 
 import "normalize.css";
-import "./assets/css/reset.css";
+import "./assets/sass/index.sass";
 import './index.css';
 
 import "@fortawesome/fontawesome";
