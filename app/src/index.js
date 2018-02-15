@@ -12,6 +12,7 @@ import store, { history } from "./store";
 import Medias from './components/app/medias/List';
 
 import Dashboard from "./components/panel/Dashboard";
+import Detail from "./components/app/Detail";
 import Login from "./components/panel/Login";
 import MediasList from "./components/panel/medias/List";
 import MediasForm from "./components/panel/medias/Form";
@@ -44,6 +45,7 @@ ReactDOM.render(
                             return (
                                 <Switch>
                                     <Route component={ Medias } exact path="/"/>
+                                    <Route component={ Detail } exact path="/detail/:slug"/>
                                     <Route component={ Dashboard } exact path="/panel"/>
                                     <Route component={ MediasList } exact path="/panel/medias"/>
                                     <Route component={ MediasForm } exact path="/panel/medias/new"/>

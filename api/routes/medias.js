@@ -4,6 +4,7 @@ module.exports = api => {
     const router = api.get("api_router");
 
     router.route("/medias").delete(controller.delete).get(controller.list).post(controller.save).put(controller.update);
-    router.route("/medias/:id").get(controller.edit);
+    router.get("/medias/find/:slug", controller.listBySlug);
+    router.get("/medias/:id", controller.edit);
 
 }

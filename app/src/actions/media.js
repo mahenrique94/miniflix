@@ -40,6 +40,23 @@ export function list() {
     }
 }
 
+export function listBySlug(slug) {
+    return dispatch => {
+        dispatch(isLoading(true));
+        fetch(`${MEDIAS_API_URL}/find/${slug}`, { headers : http.buildHeaders() })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("An error raised on getting medias from API");
+                }
+                dispatch(isLoading(false));
+                return response;
+            })
+            .then(response => response.json())
+            .then(media => dispatch(success(media)))
+            .catch(err => dispatch(error(err)));
+    }
+}
+
 export function remove(id) {
     return (dispatch, getState) => {
         dispatch(isLoading(true));

@@ -32,6 +32,14 @@ module.exports = api => {
                     res.status(500).json(error);
                 });
         },
+        listBySlug : (req, res) => {
+            model.findOne({slug : mongoSanitize(req.params.slug)}).exec()
+                .then(media => res.json(media))
+                .catch(error => {
+                    console.error(error);
+                    res.status(500).json(error);
+                });
+        },
         save : (req, res) => {
             req.body.slug = slug(req.body.title.toString().toLowerCase());
             model.create(req.body)
