@@ -9,9 +9,14 @@
         margin-right: 1rem
         text-transform: lowercase
         transition: all .2s linear
+        white-space: nowrap
         &:hover
             color: $colpr-text
             transform: scale(1.2)
+    &__wrap
+        @extend %full
+        display: flex
+        justify-content: space-between
     &__item
         display: inline-block
     &__link

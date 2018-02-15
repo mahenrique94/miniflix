@@ -12,10 +12,12 @@
     "label.describe" : "Descrição",
     "label.title" : "Título",
 
+    "menu.animes" : "Animes",
+    "menu.app" : "Aplicativo",
     "menu.medias" : "Medias",
     "menu.movies" : "Filmes",
+    "menu.panel" : "Painel",
     "menu.series" : "Séries",
-    "menu.animes" : "Animes",
 
     "message.page.not.found" : "Página não encontrada",
 

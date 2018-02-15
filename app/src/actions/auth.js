@@ -24,7 +24,7 @@ export function login(values) {
         .then(response => {
             if (response) {
                 sessionStorage.setItem("access-token", response.token);
-                dispatch(push("/panel"));
+                dispatch(push("/"));
             }
         })
         .catch(err => {
