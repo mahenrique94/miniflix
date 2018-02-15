@@ -1,38 +1,27 @@
-.mf-menu
+.#{$app-prefix}-menu
     align-items: center
-    background: #333333
+    background: $color-primary
     display: flex
     padding: 0 1rem
-
-.mf-menu__brand
-    color: #F2F2F2
-    display: block
-    margin: 0
-    text-transform: lowercase
-    transition: all .2s linear
-
-.mf-menu__brand:hover
-    color: #FFFFFF
-    transform: scale(1.2)
-
-.mf-menu__list
-    margin: 0
-
-.mf-menu__item
-    display: inline-block
-    list-style: none
-
-.mf-menu__link
-    border-bottom: 5px solid transparent
-    color: #F2F2F2
-    display: block
-    padding: 1.75rem 1.5rem 1.3rem 1.5rem
-    text-align: center
-
-.mf-menu__link:hover
-    border-bottom-color: #FF8080
-    background: rgba(0, 0, 0, .75)
-
-.mf-menu__icon
-    margin-right: .5rem
-
+    &__brand
+        color: $color-text-alt
+        display: block
+        margin-right: 1rem
+        text-transform: lowercase
+        transition: all .2s linear
+        &:hover
+            color: $colpr-text
+            transform: scale(1.2)
+    &__item
+        display: inline-block
+    &__link
+        border-bottom: 5px solid transparent
+        color: $color-text-alt
+        display: block
+        padding: 1.75rem 1.5rem 1.3rem 1.5rem
+        text-align: center
+        &:hover
+            border-bottom-color: $color-danger
+            background: rgba(0, 0, 0, .75)
+    &__icon
+        margin-right: .5rem

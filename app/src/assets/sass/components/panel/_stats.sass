@@ -1,19 +1,15 @@
-.pl-stats
+.#{$panel-prefix}-stats
     background: #A6A6A6
-    margin-left: 250px
+    margin-left: $menu-width
     padding: .5rem 1rem
     text-align: right
-    width: calc(100% - 250px)
-
-.pl-stats__item
-    color: #FDFDFD
-    display: inline
-    margin-left: 1rem
-
-.pl-stats__button
-    background: transparent
-    border: none
-    color: inherit
-
-.pl-stats__icon
-    margin-right: .3rem
+    width: calc(100% - $menu-width)
+    &__item
+        color: $color-background
+        display: inline
+        margin-left: 1rem
+    &__button
+        @extend %no-button
+        color: inherit
+    &__icon
+        margin-right: .3rem

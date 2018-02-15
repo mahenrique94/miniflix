@@ -1,66 +1,62 @@
-.mf-media
-    background: #FFFFFF
-    border: 1px solid #DCDCDC
+.#{$app-prefix}-media
+    background: $color-background
+    border: $border
     border-radius: 5px
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .1)
-    margin-bottom: 3rem
-    margin-right: 1.5rem
+    margin:
+        bottom: 3rem
+        right: 1.5rem
     transition: all .15s linear
     width: calc(33.33% - 18px)
-
-.mf-media:nth-child(3n)
-    margin-right: 0
-
-.mf-media:hover
-    transform: translateY(-12px)
-
-.mf-media__picture
-    background-position: center
-    background-size: cover
-    height: 270px
-    width: 100%
-
-.mf-media__title
-    border-bottom: 1px solid #DCDCDC
-    color: #333333
-    display: block
-    font-size: 2rem
-    font-weight: bold
-    margin: 0
-    padding-left: 1rem
-    text-decoration: none
-    transition: all .2s ease-in-out
-
-.mf-media__title:hover
-    color: #FF8080
-    letter-spacing: 5px
-
-.mf-media__content
-    color: #595959
-    font-size: 1.1rem
-    font-weight: 100
-    line-height: 1.5
-    padding: 1rem
-    text-align: justify
-
-.mf-media__link
-    border: 1px solid #FF8080
-    border-radius: 4px
-    display: block
-    color: #FF8080
-    font-size: 1.2rem
-    font-weight: 100
-    padding: 1rem
-    text-align: center
-    text-decoration: none
-    transition: all .3s ease-out
-
-.mf-media__link:hover
-    background: #FF8080
-    color: #FFFFFF
-
-.mf-media__icon
-    margin-right: .5rem
-
-.mf-media__footer
-    padding: 1rem
+    &:nth-child(3n)
+        margin-right: 0
+    &:hover
+        transform: translateY(-12px)
+    &__picture
+        background:
+            position: center
+            size: cover
+        height: 270px
+        width: 100%
+    &__title
+        border-bottom: $border
+        color: $color-primary
+        display: block
+        font:
+            size: 2rem
+            weight: bold
+        margin: 0
+        padding-left: 1rem
+        text-decoration: none
+        transition: all .2s ease-in-out
+        &:hover
+            color: $color-danger
+            letter-spacing: 5px
+    &__content
+        @extend %padding
+        color: $color-secondary
+        font:
+            size: 1.1rem
+            weight: 100
+        line-height: 1.5
+        text-align: justify
+    &__link
+        @extend %padding
+        border: $border-danger
+        border-radius: 4px
+        display: block
+        color: $color-danger
+        font:
+            size: 1.2rem
+            weight: 100
+        text:
+            align: center
+            decoration: none
+        transition: all .3s ease-out
+        &:hover
+            background: $color-danger
+            color: $color-background
+    &__icon
+        margin-right: .5rem
+    &__footer
+        @extend %padding
