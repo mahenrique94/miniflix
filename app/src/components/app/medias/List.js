@@ -14,6 +14,7 @@ class Medias extends Component {
     }
 
     render() {
+        console.log(this.props);
         return(
             <Dashboard>
                 { this.props.medias.map(media => <Media key={ media._id } describe={ media.describe } title={ media.title } image={ media.image } slug={ media.slug }/>) }
