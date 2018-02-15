@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../helpers/i18n";
 import { connect } from "react-redux";
 import jwt from "jsonwebtoken";
 import PropTypes from "prop-types";
@@ -21,7 +21,7 @@ class Stats extends Component {
             <aside className="pl-stats">
                 <ul className="pl-stats__list">
                     <li className="pl-stats__item"><i className="fas fa-user pl-stats__icon"></i>{ this.getUser().name }</li>
-                    <li className="pl-stats__item"><button className="pl-stats__button" onClick={ this.props.logout } type="button"><i className="fas fa-sign-out-alt pl-stats__icon"></i><FormattedMessage id="button.logout"/></button></li>
+                    <li className="pl-stats__item"><button className="pl-stats__button" onClick={ this.props.logout } type="button"><i className="fas fa-sign-out-alt pl-stats__icon"></i>{ i18n.message("button.logout") }</button></li>
                 </ul>
             </aside>
         );

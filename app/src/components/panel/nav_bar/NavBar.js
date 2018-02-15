@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../helpers/i18n";
 import PropTypes from "prop-types";
 
 import Breadcrumb from "./../breadcrumb/Breadcrumb";
@@ -20,7 +20,7 @@ export default class NavBar extends Component {
 
     createButtons() {
         if (this.props.type === "list") {
-            return (<Link className="pl-navbar__link pl-navbar__link--new" to={`/panel/${this.props.collection}/new`}><i className="fas fa-plus pl-navbar__icon"></i><FormattedMessage id="button.new"/></Link>);
+            return (<Link className="pl-navbar__link pl-navbar__link--new" to={`/panel/${this.props.collection}/new`}><i className="fas fa-plus pl-navbar__icon"></i>{ i18n.message("button.new") }</Link>);
         }
     }
 

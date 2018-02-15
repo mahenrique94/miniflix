@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Field } from "react-final-form";
-import { FormattedMessage } from "react-intl";
+import { i18n } from "./../../../../helpers/i18n";
 import PropTypes from "prop-types";
 
 import "./Data.css";
@@ -14,7 +14,7 @@ export default class Data extends Component {
     checkDataType() {
         if (this.props.type !== "hidden") {
             return (<div className="pl-form__group">
-                <label className="pl-form__text" htmlFor={ this.props.id }><FormattedMessage id={ `label.${this.props.name}` }/></label>
+                <label className="pl-form__text" htmlFor={ this.props.id }>{ i18n.message(`label.${this.props.name}`) }</label>
                 <Field className="pl-form__data" { ...this.props } />
             </div>);
         }
