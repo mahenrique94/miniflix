@@ -12,12 +12,14 @@
     "label.describe" : "Descrição",
     "label.title" : "Título",
 
-    "menu.animes" : "Animes",
+    "menu.acao" : "Ação",
     "menu.app" : "Aplicativo",
+    "menu.comedia" : "Comédia",
     "menu.medias" : "Medias",
-    "menu.movies" : "Filmes",
     "menu.panel" : "Painel",
-    "menu.series" : "Séries",
+    "menu.romance" : "Romance",
+    "menu.suspense" : "Suspense",
+    "menu.terror" : "Terror",
 
     "message.page.not.found" : "Página não encontrada",
 

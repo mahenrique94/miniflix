@@ -39,7 +39,7 @@ class Form extends Component {
                                 <div className={`pl-form__elements ${ this.checkMethodIsEdit() ? "" : "is-full"}`}>
                                     <Data component="input" id="id" name="_id" type="hidden"/>
                                     <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
-                                    <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
+                                    <Data component="textarea" id="describe" minLength="200" name="describe" required type="text"/>
                                 </div>
                                 <div className={`pl-form__source ${ this.checkMethodIsEdit() ? "is-show" : "is-hide"}`}>
                                     <button className="pl-form__trigger" onClick={ this.chooseFile } type="button"><img alt={ this.props.media.title } className="pl-form__img" ref={ input => this.image = input } src={ this.download() }/></button>

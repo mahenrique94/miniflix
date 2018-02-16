@@ -94,6 +94,7 @@ export default class MediaAPI {
                     throw new Error("An error raised on saving medias from API");
                 }
                 dispatch(actions.isLoading(false));
+                dispatch(actions.edit({}))
                 dispatch(push("/panel/medias"));
             }).catch(err => dispatch(actions.error(err)));
         }

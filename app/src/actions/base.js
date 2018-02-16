@@ -36,3 +36,10 @@ export function message(message) {
         payload : { message }
     }
 }
+
+export function save() {
+    return {
+        type : ActionTypes.SAVE,
+        payload : { }
+    }
+}

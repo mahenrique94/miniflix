@@ -11,7 +11,7 @@
         transition: all .2s linear
         white-space: nowrap
         &:hover
-            color: $colpr-text
+            color: $color-text
             transform: scale(1.2)
     &__wrap
         @extend %full
@@ -20,6 +20,7 @@
     &__item
         display: inline-block
     &__link
+        @extend %no-button
         border-bottom: 5px solid transparent
         color: $color-text-alt
         display: block
