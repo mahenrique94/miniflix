@@ -1,29 +1,45 @@
-import * as Types from "./../constants/ActionTypes";
+import * as ActionTypes from "./../constants/ActionTypes";
 
-export function error(state = "", action) {
-    if (action.type === Types.ERROR) {
+const del = (state = [], action) => {
+    if (action.type === ActionTypes.DELETE) {
+        return action.payload.list;
+    }
+    return state;
+}
+
+const edit = (state = {}, action) => {
+    if (action.type === ActionTypes.EDIT) {
+        return action.payload.data;
+    }
+    return state;
+}
+
+const error = (state = "", action) => {
+    if (action.type === ActionTypes.ERROR) {
         return action.payload.error;
     }
     return state;
 }
 
-export function loading(state = false, action) {
-    if (action.type === Types.IS_LOADING) {
+const loading = (state = false, action) => {
+    if (action.type === ActionTypes.IS_LOADING) {
         return action.payload.loading;
     }
     return state;
 }
 
-export function message(state = "", action) {
-    if (action.type === Types.MESSAGE) {
+const list = (state = [], action) => {
+    if (action.type === ActionTypes.LIST) {
+        return action.payload.list;
+    }
+    return state;
+}
+
+const message = (state = "", action) => {
+    if (action.type === ActionTypes.MESSAGE) {
         return action.payload.message;
     }
     return state;
 }
 
-export function success(state = [], action) {
-    if (action.type === Types.SUCCESS) {
-        return action.payload.data;
-    }
-    return state;
-}
+export default { del, edit, error, loading, list, message };

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { remove, list } from "./../../../actions/media";
+import MediaAPI from "./../../../actions/media";
 
 import NavBar from "./../NavBar";
 import Panel from "./../../../containers/Panel";
@@ -38,7 +38,7 @@ Medias.propTypes = {
 const mapStateToProps = state => {
 
     return {
-        medias : state.success
+        medias : state.list
     }
 
 }
@@ -46,8 +46,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        delete: id => dispatch(remove(id)),
-        list : () => dispatch(list())
+        delete: id => dispatch(MediaAPI.del(id)),
+        list : () => dispatch(MediaAPI.list())
     }
 
 }

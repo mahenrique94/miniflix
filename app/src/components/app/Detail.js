@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { listBySlug } from "./../../actions/media";
+import MediaAPI from "./../../actions/media";
 
 import Dashboard from "./Dashboard";
 
@@ -32,7 +32,7 @@ Detail.propTypes = {
 const mapStateToProps = state => {
 
     return {
-        media : state.success
+        media : state.edit
     }
 
 }
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        listBySlug : slug => dispatch(listBySlug(slug))
+        listBySlug : slug => dispatch(MediaAPI.listBySlug(slug))
     }
 
 }

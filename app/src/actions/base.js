@@ -1,5 +1,12 @@
 import * as ActionTypes from "./../constants/ActionTypes";
 
+export function edit(data) {
+    return {
+        type : ActionTypes.EDIT,
+        payload : { data }
+    }
+}
+
 export function error(error) {
     return {
         type : ActionTypes.ERROR,
@@ -16,16 +23,16 @@ export function isLoading(loading) {
     }
 }
 
+export function list(list) {
+    return {
+        type : ActionTypes.LIST,
+        payload : { list }
+    }
+}
+
 export function message(message) {
     return {
         type : ActionTypes.MESSAGE,
         payload : { message }
-    }
-}
-
-export function success(data) {
-    return {
-        type : ActionTypes.SUCCESS,
-        payload : { data }
     }
 }

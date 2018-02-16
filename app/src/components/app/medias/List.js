@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Dashboard from "./../Dashboard";
 import Media from "./../Media";
 
-import { list } from "./../../../actions/media";
+import MediaAPI from "./../../../actions/media";
 
 class Medias extends Component {
 
@@ -14,7 +14,6 @@ class Medias extends Component {
     }
 
     render() {
-        console.log(this.props);
         return(
             <Dashboard>
                 { this.props.medias.map(media => <Media key={ media._id } describe={ media.describe } title={ media.title } image={ media.image } slug={ media.slug }/>) }
@@ -34,7 +33,7 @@ Medias.propTypes = {
 const mapStateToProps = state => {
 
     return {
-        medias : state.success
+        medias : state.list
     }
 
 }
@@ -42,7 +41,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        list : () => dispatch(list())
+        list : () => dispatch(MediaAPI.list())
     }
 
 }

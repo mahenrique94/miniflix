@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import config from "./../../../config";
 
-import { edit, save } from "./../../../actions/media";
+import MediaAPI from "./../../../actions/media";
 
 import Data from "./../form/Data";
 import NavBar from "./../NavBar";
@@ -111,7 +111,7 @@ Form.propTypes = {
 const mapStateToProps = state => {
 
     return {
-        media : state.success
+        media : state.edit
     }
 
 }
@@ -119,8 +119,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        edit: id => dispatch(edit(id)),
-        save : values => dispatch(save(values))
+        edit: id => dispatch(MediaAPI.edit(id)),
+        save : values => dispatch(MediaAPI.save(values))
     }
 
 }
