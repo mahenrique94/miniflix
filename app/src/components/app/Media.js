@@ -10,7 +10,7 @@ export default class Media extends Component {
             <div className="mf-media">
                 <Link className="mf-media__link" to={ `/detail/${this.props.slug}` }>
                     <figure className="mf-media__figure">
-                        <img alt={ this.props.title } className="mf-media__picture" src={ `${config.API_URL}/file/download/${this.props.image}?token=${sessionStorage.getItem("access-token")})` }/>
+                        <img alt={ this.props.title } className="mf-media__picture" src={ `${config.API_URL}/file/download/${this.props.image}?token=${sessionStorage.getItem("access-token")}` }/>
                         <figcaption className="mf-media__title">{ this.props.title }</figcaption>
                     </figure>
                 </Link>
