@@ -12,14 +12,15 @@
     "label.describe" : "Describe",
     "label.title" : "Title",
 
-    "menu.acao" : "Action",
+    "menu.action" : "Action",
     "menu.app" : "App",
-    "menu.comedia" : "Comedy",
+    "menu.cattegories" : "Cattegories",
+    "menu.comedy" : "Comedy",
+    "menu.horror" : "Horror",
     "menu.medias" : "Medias",
     "menu.panel" : "Panel",
     "menu.romance" : "Romance",
-    "menu.suspense" : "Thriller",
-    "menu.terror" : "Horror",
+    "menu.thriller" : "Thriller",
 
     "message.page.not.found" : "Page not found",
 
