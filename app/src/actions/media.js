@@ -2,6 +2,7 @@ import { push } from "react-router-redux";
 import * as actions from "./base";
 import { http } from "./../helpers/http";
 import config from "./../config";
+import axios from "axios";
 
 const MEDIAS_API_URL = `${config.API_URL}/medias`;
 const removeMediaById = (medias, id) => medias.filter(media => media._id !== id);
@@ -11,64 +12,55 @@ export default class MediaAPI {
     static edit(id) {
         return dispatch => {
             dispatch(actions.isLoading(true));
-            fetch(`${MEDIAS_API_URL}/${id}`, { headers : http.buildHeaders() })
+            axios(`${MEDIAS_API_URL}/${id}`, { headers : http.buildHeaders() })
                 .then(response => {
-                    if (!response.ok) {
+                    if (!response.status === 200) {
                         throw new Error("An error raised on getting media from API");
                     }
                     dispatch(actions.isLoading(false));
-                    return response;
-                })
-                .then(response => response.json())
-                .then(media => dispatch(actions.edit(media)))
-                .catch(err => dispatch(actions.error(err)));
+                    dispatch(actions.edit(response.data));
+                }).catch(err => dispatch(actions.error(err)));
         }
     }
     
     static list() {
         return dispatch => {
             dispatch(actions.isLoading(true));
-            fetch(MEDIAS_API_URL, { headers : http.buildHeaders() })
+            axios(MEDIAS_API_URL, { headers : http.buildHeaders() })
                 .then(response => {
-                    if (!response.ok) {
+                    if (!response.status === 200) {
                         throw new Error("An error raised on getting medias from API");
                     }
                     dispatch(actions.isLoading(false));
-                    return response;
-                })
-                .then(response => response.json())
-                .then(medias => dispatch(actions.list(medias)))
-                .catch(err => dispatch(actions.error(err)));
+                    dispatch(actions.list(response.data));
+                }).catch(err => dispatch(actions.error(err)));
         }
     }
     
     static listBySlug(slug) {
         return dispatch => {
             dispatch(actions.isLoading(true));
-            fetch(`${MEDIAS_API_URL}/find/${slug}`, { headers : http.buildHeaders() })
+            axios(`${MEDIAS_API_URL}/find/${slug}`, { headers : http.buildHeaders() })
                 .then(response => {
-                    if (!response.ok) {
+                    if (!response.status === 200) {
                         throw new Error("An error raised on getting medias from API");
                     }
                     dispatch(actions.isLoading(false));
-                    return response;
-                })
-                .then(response => response.json())
-                .then(media => dispatch(actions.edit(media)))
-                .catch(err => dispatch(actions.error(err)));
+                    dispatch(actions.edit(response.data));
+                }).catch(err => dispatch(actions.error(err)));
         }
     }
     
     static del(id) {
         return (dispatch, getState) => {
             dispatch(actions.isLoading(true));
-            fetch(MEDIAS_API_URL, {
+            axios(MEDIAS_API_URL, {
                 method : "DELETE",
                 headers : http.buildHeaders(),
-                body: JSON.stringify({ "_id" : id})
+                data: JSON.stringify({ "_id" : id})
             }).then(response => {
                 const medias = getState().list;
-                if (!response.ok) {
+                if (!response.status === 200) {
                     throw new Error("An error raised on deleting medias from API");
                 }
     
@@ -85,12 +77,12 @@ export default class MediaAPI {
             if (values._id) {
                 method = "PUT";
             }
-            fetch(MEDIAS_API_URL, {
-                method : method,
+            axios(MEDIAS_API_URL, {
+                method,
                 headers : http.buildHeaders(),
-                body: JSON.stringify(values)
+                data: JSON.stringify(values)
             }).then(response => {
-                if (!response.ok) {
+                if (!response.status === 200) {
                     throw new Error("An error raised on saving medias from API");
                 }
                 dispatch(actions.isLoading(false));

@@ -1,31 +1,26 @@
 import { push } from "react-router-redux";
 import { error, isLoading, message } from "./base";
 import config from "./../config";
+import axios from "axios";
 
 export function login(values) {
     return dispatch => {
         dispatch(isLoading(true));
-        fetch(`${config.API_URL}/auth`, {
+        axios(`${config.API_URL}/auth`, {
             method : "POST",
             headers : {
                 "Accept" : "application/json",
                 "Content-Type" : "application/json"
             },
-            body : JSON.stringify(values)
+            data : JSON.stringify(values)
         })
         .then(response => {
-            if (!response.ok) {
+            if (!response.status === 200) {
                 throw new Error("An error raised on trying to authenticate user from API");
             }
             dispatch(isLoading(false));
-            return response;
-        })
-        .then(response => response.json())
-        .then(response => {
-            if (response) {
-                sessionStorage.setItem("access-token", response.token);
-                dispatch(push("/"));
-            }
+            sessionStorage.setItem("access-token", response.data.token);
+            dispatch(push("/"));;
         })
         .catch(err => {
             dispatch(message("Usuário ou senha inválidos"));

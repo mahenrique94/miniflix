@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { i18n } from "./../../helpers/i18n";
 import PropTypes from "prop-types";
 import config from "./../../config";
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form as ReactForm } from "react-final-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import axios from "axios";
 import config from "./../../../config";
 
 import MediaAPI from "./../../../actions/media";
@@ -85,14 +86,14 @@ class Form extends Component {
 
     processFile(event) {
         const file = event.target.files[0];
-        fetch(`${config.API_URL}/file/upload`, {
+        axios(`${config.API_URL}/file/upload`, {
             method : "POST",
             headers : {
                 "x-access-token" : sessionStorage.getItem("access-token")
             },
-            body : this.buildBody(file)
+            data : this.buildBody(file)
         }).then(response => {
-            if (!response.ok) {
+            if (!response.status === 200) {
                 throw new Error("An error was raised on trying upload a file to API");
             }
             this.image.src = URL.createObjectURL(file);

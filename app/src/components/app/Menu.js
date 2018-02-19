@@ -19,7 +19,8 @@ export default class Menu extends Component {
                     <ul className="mf-menu__list">
                         <li className="mf-menu__item has-dropdown">
                             <button className="mf-menu__link" onClick={ this.dropdown } type="button"><i className="fas fa-bars mf-menu__icon no-margin"></i></button>
-                            
+                            <div className="">
+                            </div>
                         </li>
                     </ul>
                     <ul className="mf-menu__list">
