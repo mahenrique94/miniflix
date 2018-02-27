@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import { i18n } from "./../../../helpers/i18n";
 import PropTypes from "prop-types";
 
+import I18nHelper from "../../../helpers/I18nHelper";
+
 export default class Delete extends Component {
+
+    static propTypes = {
+        delete : PropTypes.func.isRequired
+    };
 
     constructor(props) {
         super(props);
@@ -12,7 +17,7 @@ export default class Delete extends Component {
 
     render() {
         return(
-            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i>{ i18n.message("button.delete") }</button>
+            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i>{ I18nHelper.message("button.delete") }</button>
         );
     }
 
@@ -21,11 +26,5 @@ export default class Delete extends Component {
             this.props.delete(this.props.id);
         }
     }
-
-}
-
-Delete.propTypes = {
-
-    delete : PropTypes.func.isRequired
 
 }

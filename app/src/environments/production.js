@@ -1,3 +1,4 @@
 export const config = {
-    API_URL : ""
-}
+    API_URL : "",
+    SECRET : "chaves"
+};

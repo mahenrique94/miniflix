@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { i18n } from "./../../helpers/i18n";
+import I18nHelper from "./../../helpers/I18nHelper";
 
 export default class NotFound extends Component {
 
@@ -13,8 +13,8 @@ export default class NotFound extends Component {
     render() {
         return(
             <section className="pl-notFound">
-                <h1 className="pl-notFound__title">{ i18n.message("message.page.not.found") }</h1>
-                <Link className="pl-notFound__link" to={ this.checkLink() }><i className="fas fa-home pl-notFound__icon"></i>{ i18n.message("button.return.home") }</Link>
+                <h1 className="pl-notFound__title">{ I18nHelper.message("message.page.not.found") }</h1>
+                <Link className="pl-notFound__link" to={ this.checkLink() }><i className="fas fa-home pl-notFound__icon"></i>{ I18nHelper.message("button.return.home") }</Link>
             </section>
         );
     }

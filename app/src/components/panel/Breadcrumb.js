@@ -1,21 +1,20 @@
 import React, { Component } from "react";
-import { i18n } from "./../../helpers/i18n";
 import PropTypes from "prop-types";
 
+import I18nHelper from "./../../helpers/I18nHelper";
+
 export default class Breadcrumb extends Component {
+
+    static propTypes = {
+        title : PropTypes.string.isRequired
+    };
 
     render() {
         return(
             <div className="pl-breadcrumb">
-                <span className="pl-breadcrumb__title">{ i18n.message(`menu.${this.props.title}`) }</span>
+                <span className="pl-breadcrumb__title">{ I18nHelper.message(`menu.${this.props.title}`) }</span>
             </div>
         );
     }
 
-}
-
-Breadcrumb.propTypes = {
-
-    title : PropTypes.string.isRequired
-    
 }

@@ -4,14 +4,21 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import config from "./../../../config";
 
-import { edit, save } from "./../../../actions/media";
+import MediaAction from "./../../../actions/MediaAction";
 
-import Data from "./../form/Data";
+import AuthHelper from "./../../../helpers/AuthHelper";
+
+import Data from "../form/FormData";
 import NavBar from "./../NavBar";
 import Panel from "./../../../containers/Panel";
-import Actions from "./../form/Actions";
+import Actions from "../form/FormActions";
 
 class Form extends Component {
+
+    static propTypes = {
+        edit : PropTypes.func.isRequired,
+        save : PropTypes.func.isRequired
+    };
 
     constructor() {
         super();
@@ -79,7 +86,7 @@ class Form extends Component {
 
     download() {
         if (this.props.media !== undefined && this.props.media.image !== undefined)
-            return `${config.API_URL}/file/download/${this.props.media.image}?token=${sessionStorage.getItem("access-token")}`
+            return `${config.API_URL}/file/download/${this.props.media.image}?token=${AuthHelper.getToken()}`
         return "";
     }
 
@@ -88,7 +95,7 @@ class Form extends Component {
         fetch(`${config.API_URL}/file/upload`, {
             method : "POST",
             headers : {
-                "x-access-token" : sessionStorage.getItem("access-token")
+                "x-access-token" : AuthHelper.getToken()
             },
             body : this.buildBody(file)
         }).then(response => {
@@ -101,28 +108,13 @@ class Form extends Component {
 
 }
 
-Form.propTypes = {
+const mapStateToProps = state => ({
+    media : state.mediaReducer.object
+});
 
-    edit : PropTypes.func.isRequired,
-    save : PropTypes.func.isRequired
-
-}
-
-const mapStateToProps = state => {
-
-    return {
-        media : state.success
-    }
-
-}
-
-const mapDispatchToProps = dispatch => {
-
-    return {
-        edit: id => dispatch(edit(id)),
-        save : values => dispatch(save(values))
-    }
-
-}
+const mapDispatchToProps = dispatch => ({
+    edit: id => dispatch(MediaAction.edit(id)),
+    save : values => dispatch(MediaAction.save(values))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

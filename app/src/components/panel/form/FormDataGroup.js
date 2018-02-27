@@ -4,6 +4,17 @@ import PropTypes from "prop-types";
 
 export default class DataGroup extends Component {
 
+    static propTypes = {
+        autoFocus : PropTypes.bool,
+        component : PropTypes.string.isRequired,
+        id : PropTypes.string.isRequired,
+        max : PropTypes.string,
+        maxLength : PropTypes.string,
+        min : PropTypes.string,
+        name : PropTypes.string.isRequired,
+        type : PropTypes.string.isRequired
+    };
+
     render() {
         return(
             <div className="pl-form__group">
@@ -12,18 +23,5 @@ export default class DataGroup extends Component {
             </div>
         );
     }
-
-}
-
-DataGroup.propTypes = {
-
-    autoFocus : PropTypes.bool,
-    component : PropTypes.string.isRequired,
-    id : PropTypes.string.isRequired,
-    max : PropTypes.string,
-    maxLength : PropTypes.string,
-    min : PropTypes.string,
-    name : PropTypes.string.isRequired,
-    type : PropTypes.string.isRequired
 
 }

@@ -4,7 +4,7 @@ import thunk from "redux-thunk";
 import createHistory from "history/createBrowserHistory";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import reducers from "./reducers/base";
+import reducers from "./reducers/index";
 
 export const history = createHistory({ basename : "miniflix"});
 

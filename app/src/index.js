@@ -9,39 +9,41 @@ import en from "react-intl/locale-data/en";
 import br from "react-intl/locale-data/pt";
 import store, { history } from "./store";
 
-import Medias from './components/app/medias/List';
+import AuthHelper from "./helpers/AuthHelper";
 
 import Dashboard from "./components/panel/Dashboard";
-import Detail from "./components/app/Detail";
+import Detail from "./components/app/medias/MediasDetail";
 import Login from "./components/panel/Login";
-import MediasList from "./components/panel/medias/List";
-import MediasForm from "./components/panel/medias/Form";
+import Medias from './components/app/medias/MediasList';
+import MediasList from "./components/panel/medias/MediasList";
+import MediasForm from "./components/panel/medias/MediasForm";
 import NotFound from "./components/panel/NotFound";
 
 import "normalize.css";
-import "./assets/sass/index.sass";
 
 import "@fortawesome/fontawesome";
 import "@fortawesome/fontawesome-free-brands";
 import "@fortawesome/fontawesome-free-regular";
 import "@fortawesome/fontawesome-free-solid";
 
+import "./assets/sass/index.sass";
+
 import { messages } from "./messages/";
 
 addLocaleData([...en, ...br]);
 
-const isLogged = () => sessionStorage.getItem("access-token") !== null;
-const locale = navigator.languages.length ? navigator.languages[0] : navigator.language;
-const getMessages = () => messages[locale.split("-")[0]];
+const language = navigator.languages.length ? navigator.languages[0] : navigator.language;
+const locale = language.split("-")[0];
+const getMessages = () => messages[locale];
 
 ReactDOM.render(
-    <IntlProvider locale={ locale } messages={ getMessages() }>
+    <IntlProvider locale={ language } messages={ getMessages() }>
         <Provider store={ store }>
             <ConnectedRouter history={ history }>
                 <Switch>
                     <Route component={ Login } exact path="/panel/login"/>
                     <Route path="*" render={() => {
-                        if (isLogged()) {
+                        if (AuthHelper.isLogged()) {
                             return (
                                 <Switch>
                                     <Route component={ Medias } exact path="/"/>

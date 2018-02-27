@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { remove, list } from "./../../../actions/media";
+import MediaAction from "../../../actions/MediaAction";
 
 import NavBar from "./../NavBar";
 import Panel from "./../../../containers/Panel";
 import Table from "./../Table";
 
 class Medias extends Component {
+
+    static propTypes = {
+        delete : PropTypes.func.isRequired,
+        list : PropTypes.func.isRequired,
+        medias : PropTypes.array.isRequired
+    };
 
     componentDidMount() {
         this.props.list();
@@ -27,29 +33,13 @@ class Medias extends Component {
 
 }
 
-Medias.propTypes = {
+const mapStateToProps = state => ({
+    medias : state.mediaReducer.list
+});
 
-    delete : PropTypes.func.isRequired,
-    list : PropTypes.func.isRequired,
-    medias : PropTypes.array.isRequired
-
-}
-
-const mapStateToProps = state => {
-
-    return {
-        medias : state.success
-    }
-
-}
-
-const mapDispatchToProps = dispatch => {
-
-    return {
-        delete: id => dispatch(remove(id)),
-        list : () => dispatch(list())
-    }
-
-}
+const mapDispatchToProps = dispatch => ({
+    delete: id => dispatch(MediaAction.remove(id)),
+    list : () => dispatch(MediaAction.list())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Medias);

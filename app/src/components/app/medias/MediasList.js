@@ -2,19 +2,23 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import MediaAction from "../../../actions/MediaAction";
+
 import Dashboard from "./../Dashboard";
 import Media from "./../Media";
 
-import { list } from "./../../../actions/media";
-
 class Medias extends Component {
+
+    static propTypes = {
+        medias : PropTypes.array.isRequired,
+        list : PropTypes.func.isRequired
+    };
 
     componentDidMount() {
         this.props.list();
     }
 
     render() {
-        console.log(this.props);
         return(
             <Dashboard>
                 { this.props.medias.map(media => <Media key={ media._id } describe={ media.describe } title={ media.title } image={ media.image } slug={ media.slug }/>) }
@@ -24,27 +28,12 @@ class Medias extends Component {
 
 }
 
-Medias.propTypes = {
+const mapStateToProps = state => ({
+    medias : state.mediaReducer.list
+});
 
-    medias : PropTypes.array.isRequired,
-    list : PropTypes.func.isRequired
-    
-}
-
-const mapStateToProps = state => {
-
-    return {
-        medias : state.success
-    }
-
-}
-
-const mapDispatchToProps = dispatch => {
-
-    return {
-        list : () => dispatch(list())
-    }
-
-}
+const mapDispatchToProps = dispatch => ({
+    list : () => dispatch(MediaAction.list())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Medias);
