@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form as ReactForm } from "react-final-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import axios from "axios";
 import config from "./../../../config";
 
 import MediaAction from "./../../../actions/MediaAction";
@@ -46,7 +47,7 @@ class Form extends Component {
                                 <div className={`pl-form__elements ${ this.checkMethodIsEdit() ? "" : "is-full"}`}>
                                     <Data component="input" id="id" name="_id" type="hidden"/>
                                     <Data autoFocus={ this.checkAutoFocus() } component="input" id="title" maxLength="120" name="title" required type="text"/>
-                                    <Data component="textarea" id="describe" maxLength="120" name="describe" required type="text"/>
+                                    <Data component="textarea" id="describe" minLength="200" name="describe" required type="text"/>
                                 </div>
                                 <div className={`pl-form__source ${ this.checkMethodIsEdit() ? "is-show" : "is-hide"}`}>
                                     <button className="pl-form__trigger" onClick={ this.chooseFile } type="button"><img alt={ this.props.media.title } className="pl-form__img" ref={ input => this.image = input } src={ this.download() }/></button>
@@ -92,14 +93,14 @@ class Form extends Component {
 
     processFile(event) {
         const file = event.target.files[0];
-        fetch(`${config.API_URL}/file/upload`, {
+        axios(`${config.API_URL}/file/upload`, {
             method : "POST",
             headers : {
                 "x-access-token" : AuthHelper.getToken()
             },
-            body : this.buildBody(file)
+            data : this.buildBody(file)
         }).then(response => {
-            if (!response.ok) {
+            if (!response.status === 200) {
                 throw new Error("An error was raised on trying upload a file to API");
             }
             this.image.src = URL.createObjectURL(file);

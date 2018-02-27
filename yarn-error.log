@@ -1,0 +1,76 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/matheus/.rvm/gems/ruby-2.4.2/bin:/Users/matheus/.rvm/gems/ruby-2.4.2@global/bin:/Users/matheus/.rvm/rubies/ruby-2.4.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin/:/Library/PostgreSQL/10/bin/:/Users/matheus/.composer/vendor/bin:/Applications/apache-maven-3.5.2/bin:/Users/matheus/.rvm/bin:/Users/matheus/.rvm/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.4
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "miniflix",
+    "version": "1.0.0",
+    "description": "Mini Netflix feito com MERN para transmitir filmes, series e videos",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mahenrique94/miniflix.git"
+    },
+    "keywords": [
+      "filmes",
+      "videos",
+      "series",
+      "stream",
+      "react",
+      "mongodb",
+      "express",
+      "node",
+      "mern",
+      "webapp"
+    ],
+    "author": "Matheus Castiglioni",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/mahenrique94/miniflix/issues"
+    },
+    "homepage": "https://github.com/mahenrique94/miniflix#readme",
+    "dependencies": {
+      "body-parser": "^1.18.2",
+      "consign": "^0.1.6",
+      "cors": "^2.8.4",
+      "express": "^4.16.2",
+      "file-type": "^7.5.0",
+      "helmet": "^3.9.0",
+      "jsonwebtoken": "^8.1.0",
+      "method-override": "^2.3.10",
+      "mongo-sanitize": "^1.0.0",
+      "mongoose": "^4.13.9",
+      "morgan": "^1.9.0",
+      "multer": "^1.3.0",
+      "path": "^0.12.7",
+      "slug": "^0.9.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: http://10.55.200.104:8081/artifactory/api/npm/npm-cps/body-parser: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:123749:19)
+      at ontimeout (timers.js:475:11)
+      at tryOnTimeout (timers.js:310:5)
+      at Timer.listOnTimeout (timers.js:270:5)

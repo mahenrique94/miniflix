@@ -12,6 +12,7 @@ module.exports = () => {
             type : String
         },
         describe : {
+            minlength: 200,
             required : false,
             type : String
         },

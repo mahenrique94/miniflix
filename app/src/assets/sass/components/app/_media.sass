@@ -12,51 +12,28 @@
         margin-right: 0
     &:hover
         transform: translateY(-12px)
-    &__picture
+    &:hover &__picture
+            filter: brightness(70%) grayscale(0)
+    &__figure
         background:
+            color: rgba(0, 0, 0, .5)
             position: center
             size: cover
         height: 270px
+        position: relative
+        width: 100%
+    &__picture
+        filter: brightness(50%) grayscale(1)
+        height: 100%
         width: 100%
     &__title
-        border-bottom: $border
-        color: $color-primary
+        $title-gap: 2rem
+        bottom: ($title-gap - .5rem)
+        color: $color-text
         display: block
         font:
-            size: 2rem
+            size: 1.6rem
             weight: bold
-        margin: 0
-        padding-left: 1rem
-        text-decoration: none
-        transition: all .2s ease-in-out
-        &:hover
-            color: $color-danger
-            letter-spacing: 5px
-    &__content
-        @extend %padding
-        color: $color-secondary
-        font:
-            size: 1.1rem
-            weight: 100
-        line-height: 1.5
-        text-align: justify
-    &__link
-        @extend %padding
-        border: $border-danger
-        border-radius: 4px
-        display: block
-        color: $color-danger
-        font:
-            size: 1.2rem
-            weight: 100
-        text:
-            align: center
-            decoration: none
-        transition: all .3s ease-out
-        &:hover
-            background: $color-danger
-            color: $color-background
-    &__icon
-        margin-right: .5rem
-    &__footer
-        @extend %padding
+        left: $title-gap
+        position: absolute
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, .7)
