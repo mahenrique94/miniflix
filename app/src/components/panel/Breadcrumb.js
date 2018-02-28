@@ -12,7 +12,7 @@ export default class Breadcrumb extends Component {
     render() {
         return(
             <div className="pl-breadcrumb">
-                <span className="pl-breadcrumb__title">{ I18nHelper.message(`menu.${this.props.title}`) }</span>
+                <span className="pl-breadcrumb__title">{ I18nHelper.translate(`menu.${this.props.title}`) }</span>
             </div>
         );
     }

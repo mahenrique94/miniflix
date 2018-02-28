@@ -349,11 +349,11 @@ module.exports = {
       filename: 'service-worker.js',
       logger(message) {
         if (message.indexOf('Total precache size is') === 0) {
-          // This message occurs for every build and is a bit too noisy.
+          // This translate occurs for every build and is a bit too noisy.
           return;
         }
         if (message.indexOf('Skipping static resource') === 0) {
-          // This message obscures real errors so we ignore it.
+          // This translate obscures real errors so we ignore it.
           // https://github.com/facebookincubator/create-react-app/issues/2612
           return;
         }

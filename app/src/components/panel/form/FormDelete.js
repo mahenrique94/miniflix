@@ -17,7 +17,7 @@ export default class Delete extends Component {
 
     render() {
         return(
-            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i>{ I18nHelper.message("button.delete") }</button>
+            <button className="pl-table__link pl-table__link--delete" onClick={ this.delete } type="button"><i className="fas fa-trash-alt pl-table__icon"></i>{ I18nHelper.translate("button.delete") }</button>
         );
     }
 

@@ -54,7 +54,7 @@ choosePort(HOST, DEFAULT_PORT)
     const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
     const appName = require(paths.appPackageJson).name;
     const urls = prepareUrls(protocol, HOST, port);
-    // Create a webpack compiler that is configured with custom messages.
+    // Create a webpack compiler that is configured with custom translations.
     const compiler = createCompiler(webpack, config, appName, urls, useYarn);
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;

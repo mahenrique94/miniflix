@@ -26,7 +26,7 @@ class Stats extends Component {
             <aside className="pl-stats">
                 <ul className="pl-stats__list">
                     <li className="pl-stats__item"><i className="fas fa-user pl-stats__icon"></i>{ this.getUser().name }</li>
-                    <li className="pl-stats__item"><button className="pl-stats__button" onClick={ this.props.logout } type="button"><i className="fas fa-sign-out-alt pl-stats__icon"></i>{ I18nHelper.message("button.logout") }</button></li>
+                    <li className="pl-stats__item"><button className="pl-stats__button" onClick={ this.props.logout } type="button"><i className="fas fa-sign-out-alt pl-stats__icon"></i>{ I18nHelper.translate("button.logout") }</button></li>
                 </ul>
             </aside>
         );

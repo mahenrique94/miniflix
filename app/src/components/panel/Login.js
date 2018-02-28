@@ -28,13 +28,13 @@ class Login extends Component {
         return(
             <section className="pl-login">
                 <fieldset className="pl-login__panel">
-                    <legend className="pl-login__title"><i className="fab fa-cloudversify pl-login__icon"></i>{ I18nHelper.message("title.app") }</legend>
+                    <legend className="pl-login__title"><i className="fab fa-cloudversify pl-login__icon"></i>{ I18nHelper.translate("title.app") }</legend>
                     <ReactForm onSubmit={ this.props.login } render={ ({ handleSubmit }) => (
                         <form autoComplete="off" className="pl-login__form" onSubmit={ handleSubmit }>
                             <DataGroup autoFocus className="pl-form__groupData pl-login__data" component="input" icon="fa fa-user" id="username" maxLength="30" name="username" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.user"}) } required type="text" />
                             <DataGroup className="pl-form__groupData pl-login__data" component="input" icon="fa fa-lock" id="password" maxLength="16" name="password" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.password"}) } required type="password"/>
                             { this.feedback() }
-                            <button className="pl-login__button" type="submit"><i className="fas fa-sign-in-alt pl-login__icon"></i>{ I18nHelper.message("button.login") }</button>
+                            <button className="pl-login__button" type="submit"><i className="fas fa-sign-in-alt pl-login__icon"></i>{ I18nHelper.translate("button.login") }</button>
                         </form>
                     )}/>
                 </fieldset>

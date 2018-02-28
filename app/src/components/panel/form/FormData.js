@@ -24,7 +24,7 @@ export default class Data extends Component {
     checkDataType() {
         if (this.props.type !== "hidden") {
             return (<div className="pl-form__group">
-                <label className="pl-form__text" htmlFor={ this.props.id }>{ I18nHelper.message(`label.${this.props.name}`) }</label>
+                <label className="pl-form__text" htmlFor={ this.props.id }>{ I18nHelper.translate(`label.${this.props.name}`) }</label>
                 <Field className="pl-form__data" { ...this.props } />
             </div>);
         }

@@ -13,8 +13,8 @@ export default class Actions extends Component {
     render() {
         return(
             <div className="pl-form__actions">
-                <button className="pl-form__action pl-form__action--save" type="submit"><i className="fas fa-save pl-navbar__icon"></i>{ I18nHelper.message("button.save") }</button>
-                <Link className="pl-form__action pl-form__action--cancel" to={`/panel/${this.props.collection}`}><i className="fas fa-times pl-navbar__icon"></i>{ I18nHelper.message("button.cancel") }</Link>
+                <button className="pl-form__action pl-form__action--save" type="submit"><i className="fas fa-save pl-navbar__icon"></i>{ I18nHelper.translate("button.save") }</button>
+                <Link className="pl-form__action pl-form__action--cancel" to={`/panel/${this.props.collection}`}><i className="fas fa-times pl-navbar__icon"></i>{ I18nHelper.translate("button.cancel") }</Link>
             </div>
         );
     }

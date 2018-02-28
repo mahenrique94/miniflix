@@ -28,7 +28,7 @@ export default class NavBar extends Component {
 
     createButtons() {
         if (this.props.type === "list") {
-            return (<Link className="pl-navbar__link pl-navbar__link--new" to={`/panel/${this.props.collection}/new`}><i className="fas fa-plus pl-navbar__icon"></i>{ I18nHelper.message("button.new") }</Link>);
+            return (<Link className="pl-navbar__link pl-navbar__link--new" to={`/panel/${this.props.collection}/new`}><i className="fas fa-plus pl-navbar__icon"></i>{ I18nHelper.translate("button.new") }</Link>);
         }
     }
 

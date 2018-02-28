@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 
 export default class I18nHelper {
 
-    static message(message) {
+    static translate(message) {
         return <FormattedMessage id={ message }/>;
     }
 

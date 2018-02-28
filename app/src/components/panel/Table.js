@@ -23,7 +23,7 @@ export default class Table extends Component {
                 <table className="pl-table">
                     <thead className="pl-table__header">
                     <tr className="pl-table__header___row">
-                        { this.props.columns.map(column => <th className="pl-table__header___column" key={ column }>{ I18nHelper.message(`label.${column}`) }</th>)}
+                        { this.props.columns.map(column => <th className="pl-table__header___column" key={ column }>{ I18nHelper.translate(`label.${column}`) }</th>)}
                         <th></th>
                     </tr>
                     </thead>
@@ -32,7 +32,7 @@ export default class Table extends Component {
                         <tr className="pl-table__body___row" key={ item._id }>
                             { this.props.columns.map(column => <td className="pl-table__body___column" key={ column }>{ item[column] }</td>) }
                             <td className="pl-table__body___column">
-                                <Link className="pl-table__link pl-table__link--edit" to={`/panel/${this.props.type}/${item._id}`}><i className="fas fa-pencil-alt pl-table__icon"></i>{ I18nHelper.message("button.edit") }</Link>
+                                <Link className="pl-table__link pl-table__link--edit" to={`/panel/${this.props.type}/${item._id}`}><i className="fas fa-pencil-alt pl-table__icon"></i>{ I18nHelper.translate("button.edit") }</Link>
                                 <Delete delete={ this.props.delete } id={ item._id }/>
                             </td>
                         </tr>
