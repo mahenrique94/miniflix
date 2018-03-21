@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import MediaAction from "../../../actions/MediaAction";
 
 import Dashboard from "./../Dashboard";
-import Media from "./../Media";
+import Media from "./../../media/Media";
 
 class Medias extends Component {
 

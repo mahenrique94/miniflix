@@ -26,7 +26,7 @@ export default class AuthAction {
             .then(response => response.json())
             .then(response => {
                 if (response) {
-                    AuthHelper.login(response.token)
+                    AuthHelper.login(response.token);
                     dispatch(ActionsHelper.dispatch(ActionTypes.AUTH_LOGIN, "messages.auth.login"));
                     dispatch(push("/"));
                 }
