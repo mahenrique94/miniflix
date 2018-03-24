@@ -9,6 +9,8 @@
     "button.save" : "Salvar",
     "button.view" : "Visualizar",
 
+    "error.auth.login" : "Usuário ou senha inválidos",
+
     "label.describe" : "Descrição",
     "label.title" : "Título",
 

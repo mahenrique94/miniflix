@@ -6,13 +6,12 @@ class MediaFigureImage extends Component {
 
     static propTypes = {
         alt : PropTypes.string.isRequired,
+        className : PropTypes.string.isRequired,
         src : PropTypes.string.isRequired
     };
 
     render() {
-        return(
-            <img alt={ this.props.alt } className={ this.props.className } src={ this.props.src }/>
-        );
+        return <img alt={ this.props.alt } className={ this.props.className } src={ this.props.src }/>;
     }
 
 }

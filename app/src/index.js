@@ -26,8 +26,6 @@ import "@fortawesome/fontawesome-free-brands";
 import "@fortawesome/fontawesome-free-regular";
 import "@fortawesome/fontawesome-free-solid";
 
-import "./assets/sass/index.sass";
-
 import { messages } from "./translations/";
 
 addLocaleData([...en, ...br]);

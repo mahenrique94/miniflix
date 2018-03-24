@@ -5,13 +5,12 @@ import styled from "styled-components";
 class MediaFigureCaption extends Component {
 
     static propTypes = {
-        caption : PropTypes.string.isRequired
+        caption : PropTypes.string.isRequired,
+        className : PropTypes.string.isRequired
     };
 
     render() {
-        return(
-            <figcaption className={ this.props.className }>{ this.props.caption }</figcaption>
-        );
+        return <figcaption className={ this.props.className }>{ this.props.caption }</figcaption>;
     }
 
 }

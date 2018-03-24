@@ -10,11 +10,7 @@ export default class MediaLink extends Component {
     };
 
     render() {
-        return (
-            <Link to={ this.props.to }>
-                { this.props.children }
-            </Link>
-        );
+        return <Link to={ this.props.to }>{ this.props.children }</Link>;
     }
 
 }

@@ -5,15 +5,12 @@ import styled from "styled-components";
 class MediaFigure extends Component {
 
     static propTypes = {
-        children : PropTypes.any.isRequired
+        children : PropTypes.any.isRequired,
+        className : PropTypes.string.isRequired
     };
 
     render() {
-        return(
-            <figure className={ this.props.className }>
-                { this.props.children }
-            </figure>
-        );
+        return <figure className={ this.props.className }>{ this.props.children }</figure>;
     }
 
 }
