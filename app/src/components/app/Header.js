@@ -6,7 +6,7 @@ export default class Header extends Component {
 
     render() {
         return(
-            <header className="mf-header">
+            <header>
                 <Menu/>
             </header>
         );

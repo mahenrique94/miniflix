@@ -1,25 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-class LoginPanel extends Component {
-
-    static propTypes = {
-        children : PropTypes.any.isRequired,
-        className : PropTypes.string.isRequired
-    };
-
-    render() {
-        return (
-            <section className={ this.props.className }>
-                { this.props.children }
-            </section>
-        );
-    }
-
-}
-
-const StyledLoginPanel = styled(LoginPanel)`
+const LoginPanel = styled.section`
     background: #FDFDFD;
     border: 1px solid #DCDCDC;
     border-radius: 12px;
@@ -28,4 +9,4 @@ const StyledLoginPanel = styled(LoginPanel)`
     width: 400px;
 `;
 
-export default StyledLoginPanel;
+export default LoginPanel;

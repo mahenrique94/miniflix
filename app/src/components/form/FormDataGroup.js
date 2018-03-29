@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 import FormData from "./FormData";
 import FormGroup from "./FormGroup";
 import FormGroupElement from "./FormGroupElement";
 import FormGroupIcon from "./FormGroupIcon";
 
-class FormDataGroup extends Component {
+export default class FormDataGroup extends Component {
 
     static defaultProps = {
         autoFocus : false,
@@ -36,7 +35,3 @@ class FormDataGroup extends Component {
     }
 
 }
-
-const StyledFormDataGroup = styled(FormDataGroup)``;
-
-export default StyledFormDataGroup;

@@ -1,21 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-class FormGroupElement extends Component {
-
-    static propTypes = {
-        children : PropTypes.any.isRequired,
-        className : PropTypes.string.isRequired
-    };
-
-    render() {
-        return <div className={ this.props.className }>{ this.props.children }</div>;
-    }
-
-}
-
-const StyledFormGroupElement = styled(FormGroupElement)`
+const FormGroupElement = styled.div`
     background: #FDFDFD;
     border: 1px solid #DCDCDC;
     border-top-right-radius: 5px;
@@ -26,4 +11,4 @@ const StyledFormGroupElement = styled(FormGroupElement)`
     width: 1%;
 `;
 
-export default StyledFormGroupElement;
+export default FormGroupElement;

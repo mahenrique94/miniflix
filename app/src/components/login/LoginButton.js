@@ -29,6 +29,7 @@ const StyledLoginButton = styled(LoginButton)`
     width: 100%;
     &:hover {
         background: #009973;
+        cursor: pointer;
     }
 `;
 

@@ -35,8 +35,8 @@ class Login extends Component {
                     <LoginTitle/>
                     <ReactForm onSubmit={ this.props.login } render={ ({ handleSubmit }) => (
                         <LoginForm onSubmit={ handleSubmit }>
-                            <LoginData autoFocus component="input" icon="fa fa-user" id="username" maxLength="30" name="username" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.user"}) } required type="text" />
-                            <LoginData component="input" icon="fa fa-lock" id="password" maxLength="16" name="password" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.password"}) } required type="password"/>
+                            <LoginData align="center" autoFocus component="input" icon="fa fa-user" id="username" maxLength="30" name="username" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.user"}) } required type="text" />
+                            <LoginData align="center" component="input" icon="fa fa-lock" id="password" maxLength="16" name="password" placeholder={ this.props.intl.formatMessage({ id : "placeholder.type.password"}) } required type="password"/>
                             { this.feedback() }
                             <LoginButton/>
                         </LoginForm>

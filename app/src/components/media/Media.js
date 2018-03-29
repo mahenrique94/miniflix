@@ -38,6 +38,7 @@ const StyledMedia = styled(Media)`
     border: 1px solid #DCDCDC;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+    display: inline-block;
     margin-bottom: 3rem;
     margin-right: 1.5rem;
     transition: all .15s linear;

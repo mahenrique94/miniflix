@@ -12,7 +12,7 @@ export default class Detail extends Component {
     render() {
         return(
             <App>
-                <div className="mf-container">
+                <div>
                     { this.props.children }
                 </div>
             </App>

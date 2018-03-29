@@ -19,6 +19,7 @@ const StyledMediaFigureCaption = styled(MediaFigureCaption)`
     bottom: 1.5rem;
     color: #FFFFFF;
     display: block;
+    font-family: Arial, sans-serif;
     font-size: 1.6rem;
     font-weight: bold;
     left: 2rem;
